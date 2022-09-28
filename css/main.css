@@ -21255,9 +21255,18 @@ input[type="range"]::-ms-fill-upper {
 }
 
 .menu-left-cont {
-    display: none;
+    /*display: none;*/
+    opacity: 0;
+    visibility: hidden;
     top: 0;
     background: #ffffff;
+    max-width: calc(100% - 16px);
+    transition: .5s ease-out;
+}
+
+.menu-left-cont:hover {
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .menu-left-active {

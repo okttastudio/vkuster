@@ -1530,17 +1530,21 @@ var swiper = new Swiper('.swiper-container', {
 
 $('#menu-left-1').hover(
     function(){
-        $('#menu-right-1').css('display','block');
+        $('#menu-right-1').css('opacity','1');
+        $('#menu-right-1').css('visibility','visible');
     },
     function(){
-        $('#menu-right-1').css('display','none');
+        $('#menu-right-1').css('opacity','0');
+        $('#menu-right-1').css('visibility','hidden');
     }
 );
 $('#menu-left-2').hover(
     function(){
-        $('#menu-right-2').css('display','block');
+        $('#menu-right-2').css('opacity','1');
+        $('#menu-right-2').css('visibility','visible');
     },
     function(){
-        $('#menu-right-2').css('display','none');
+        $('#menu-right-2').css('opacity','0');
+        $('#menu-right-2').css('visibility','hidden');
     }
 );
