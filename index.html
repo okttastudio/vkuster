@@ -1,0 +1,3127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Vkuster Home Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer src="js/724.bundle.js"></script>
+    <script defer src="js/main.bundle.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script defer src="../js/input-spinner.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.css">
+    <link href="css/724.css" rel="stylesheet"><link href="css/main.css" rel="stylesheet"></head>
+
+<body>
+<!-- Header -->
+<header class="position-relative shadow">
+     <!--Top Banner-->
+    <div class="d-none d-md-flex bg-vkuster-promo justify-content-center py-1" id="bg-vkuster-promo">
+        <a href="#" class="nav-link text-white" aria-current="page">
+            Купон <span class="badge text-vkuster-promo py-2 bg-light" style="border-radius: 5px">150 ₽</span> всем новым покупателям
+        </a>
+        <i class="bi bi-plus promo-close" id="promo-close"></i>
+    </div>
+    <!-- Mobile Delivery Address -->
+    <div class="d-flex d-md-none bg-vkuster-delivery">
+        <ul class="nav nav-underline">
+            <li class="nav-item">
+                <a href="#" class="nav-link py-2 small text-vkuster-supply" aria-current="page" data-bs-toggle="modal" data-bs-target="#modalDelivery">
+                    <svg class="bi" width="20" height="30">
+                        <use xlink:href="/images/location.svg#vkuster-location"></use>
+                    </svg>
+                    Выберите адрес доставки или самовывоза
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- Top Menu -->
+    <div class="d-none d-md-block">
+        <nav class="bg-light">
+            <div class="container-fluid container-lg d-flex flex-wrap">
+                <ul class="nav nav-underline me-auto">
+                    <li class="nav-item">
+                        <a href="/views/store_spisok.html" class="nav-link px-1 me-1 me-lg-4">
+                            <svg class="bi me-1" width="19" height="19">
+                                <use xlink:href="/images/shops.svg#vkuster-shops"></use>
+                            </svg>
+                            Наши магазины
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/views/delivery.html" class="nav-link px-1 me-1 me-lg-4">
+                            <svg class="bi me-1" width="21" height="19">
+                                <use xlink:href="/images/car.svg#vkuster-car"></use>
+                            </svg>
+                            О доставке
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/views/profile_bonus.html" class="nav-link px-1">
+                            <svg class="bi me-1" width="21" height="15">
+                                <use xlink:href="/images/card.svg#vkuster-card"></use>
+                            </svg>
+                            Карта Вкустер
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav nav-underline">
+                    <li class="nav-item"><a href="/views/kachestvo.html" class="nav-link px-1 me-2 me-lg-4">Система качества</a></li>
+                    <li class="nav-item"><a href="/views/faq.html" class="nav-link px-1 me-2 me-lg-4">Покупателям</a></li>
+                    <li class="nav-item"><a href="/views/contacts.html" class="nav-link px-1">Контакты</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!-- Middle Menu -->
+    <div class="navbar header-main-menu flex-lg-nowrap">
+        <div class="container-fluid position-relative container-lg align-items-center">
+            <div class="col-12 hmm-inner mb-4 mb-md-0 col-md-auto d-flex justify-content-between align-items-center" style="margin-right: 1rem">
+                <a href="/" class="d-flex align-items-center mb-lg-0 text-white text-decoration-none">
+                    <img alt="Logo" class="logo" src="/images/logo.svg"/>
+                </a>
+                <button class="navbar-toggler d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false">
+                    <span class="close">
+                        <i class="bi bi-x"></i>
+                    </span>
+                    <span class="navbar-toggler-icon">
+                        <i class="bi bi-list"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="col-5 col-md-auto"">
+                <div class="dropdown vkuster-catalog-dropdown" style="margin-right: 1rem">
+                    <a class="d-none d-md-flex align-items-center btn w-100 btn-vkuster-general vkuster-catalog dropdown-toggle" data-bs-toggle="dropdown" id="catalog-dropdown" aria-expanded="false">
+                        <svg class="bi" width="18" height="18">
+                            <use xlink:href="/images/grid.svg#vkuster-grid"></use>
+                        </svg>
+                        <span class="d-sm-inline-flex px-1 px-sm-2 px-md-3 d-md-none d-xl-inline-flex">Каталог</span>
+                    </a>
+                    <a class="d-block d-md-none btn w-100 btn-vkuster-general vkuster-catalog" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCatalog" aria-controls="offcanvasCatalog">
+                        <svg class="bi" width="18" height="18">
+                            <use xlink:href="/images/grid.svg#vkuster-grid"></use>
+                        </svg>
+                        <span class="d-sm-inline-flex px-1 px-sm-2 px-md-3 d-md-none d-xl-inline-flex">Каталог</span>
+                    </a>
+                    <div class="dropdown-menu overflow-hidden mt-3 w-100 shadow border-1" aria-labelledby="catalog-dropdown">
+                        <div class="py-2 d-flex flex-column flex-grow-1 overflow-hidden px-3">
+                            <div class="row flex-grow-1 flex-column overflow-auto gx-3 menu-cat">
+                                <div class="col-4 h-100 flex-grow-1 overflow-auto border-end sidebar-catalog menu-left">
+                                    <ul class="nav nav-sidebar flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link row" href="/views/catalog_2.html">
+                                                <div class="col-1 gx-0 d-flex align-items-center">
+                                                    <img src="/images/milk.png" alt="..." />
+                                                </div>
+                                                <div class="col-10 offset-1 d-flex align-items-center">
+                                                    Молоко, сыр, яйца
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item" id="menu-left-1">
+                                            <a class="nav-link row" href="/views/catalog_2.html">
+                                                <div class="col-1 gx-0 d-flex align-items-center">
+                                                    <img src="/images/grocery.png" alt="..." />
+                                                </div>
+                                                <div class="col-10 offset-1 d-flex align-items-center">
+                                                    Бакалея
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item" id="menu-left-2">
+                                            <a class="nav-link row" href="/views/catalog_2.html">
+                                                <div class="col-1 gx-0 d-flex align-items-center">
+                                                    <img src="/images/alcofree.png" alt="..." />
+                                                </div>
+                                                <div class="col-10 offset-1 d-flex align-items-center">
+                                                    Безалкогольные напитки
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link row" href="/views/catalog_2.html">
+                                                <div class="col-1 gx-0 d-flex align-items-center">
+                                                    <img src="/images/alco.png" alt="..." />
+                                                </div>
+                                                <div class="col-10 offset-1 d-flex align-items-center">
+                                                    Алкогольные напитки
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link row" href="/views/catalog_2.html">
+                                                <div class="col-1 gx-0 d-flex align-items-center">
+                                                    <img src="/images/nutrition.png" alt="..." />
+                                                </div>
+                                                <div class="col-10 offset-1 d-flex align-items-center">
+                                                    Детское питание
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link row" href="/views/catalog_2.html">
+                                                <div class="col-1 gx-0 d-flex align-items-center">
+                                                    <img src="/images/confectionary.png" alt="..." />
+                                                </div>
+                                                <div class="col-10 offset-1 d-flex align-items-center">
+                                                    Кондитерские изделия
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link row" href="/views/catalog_2.html">
+                                                <div class="col-1 gx-0 d-flex align-items-center">
+                                                    <img src="/images/coffee.png" alt="..." />
+                                                </div>
+                                                <div class="col-10 offset-1 d-flex align-items-center">
+                                                    Чай, кофе, какао
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link row" href="/views/catalog_2.html">
+                                                <div class="col-1 gx-0 d-flex align-items-center">
+                                                    <img src="/images/cooked.png" alt="..." />
+                                                </div>
+                                                <div class="col-10 offset-1 d-flex align-items-center">
+                                                    Готовая продукция
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link row" href="/views/catalog_2.html">
+                                                <div class="col-1 gx-0 d-flex align-items-center">
+                                                    <img src="/images/canned.png" alt="..." />
+                                                </div>
+                                                <div class="col-10 offset-1 d-flex align-items-center">
+                                                    Консервы
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link row" href="/views/catalog_2.html">
+                                                <div class="col-1 gx-0 d-flex align-items-center">
+                                                    <img src="/images/meat.png" alt="..." />
+                                                </div>
+                                                <div class="col-10 offset-1 d-flex align-items-center">
+                                                    Мясо, птица, колбасы
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link row" href="/views/catalog_2.html">
+                                                <div class="col-1 gx-0 d-flex align-items-center">
+                                                    <img src="/images/vegetables.png" alt="..." />
+                                                </div>
+                                                <div class="col-10 offset-1 d-flex align-items-center">
+                                                    Фрукты, овощи, зелень
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-8 h-100 flex-grow-1 overflow-auto position-relative menu-right">
+                                    <div class="sidebar-catalog-body px-5 py-2">
+                                        <h5>Молоко, сыр, яйца</h5>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="row row-cols-2 row-cols-md-1 gy-md-1">
+                                                    <div class="col">
+                                                        <h6 class="mt-3">Молочная продукция</h6>
+                                                        <ul class="nav row flex-column gy-1">
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Молоко</a></li>
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Кисломолочные продукты</a></li>
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Кефир, ряженка</a></li>
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Сливки</a></li>
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Сметана</a></li>
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Сырки творожные</a></li>
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Сгущенное молоко</a></li>
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Творог</a></li>
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Йогурты</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col">
+                                                        <h6 class="mt-3">Сыры</h6>
+                                                        <ul class="nav row flex-column gy-1">
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Полутвердые и твердые сыры</a></li>
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Мягкие, плавленные сыры</a></li>
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Рассыльные сыры</a></li>
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Брынза, фета</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="row row-cols-2 row-cols-md-1 gy-md-1">
+                                                    <div class="col">
+                                                        <h6 class="mt-3">Сливочное масло, маргарин</h6>
+                                                        <ul class="nav row flex-column gy-1">
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Масло</a></li>
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Маргарин</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col">
+                                                        <h6 class="mt-3">Яйцо</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sidebar-catalog-body px-5 py-2 position-absolute menu-left-cont" id="menu-right-1">
+                                        <h5>Бакалея</h5>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="row row-cols-2 row-cols-md-1 gy-md-1">
+                                                    <div class="col">
+                                                        <h6 class="mt-3">Молочная продукция</h6>
+                                                        <ul class="nav row flex-column gy-1">
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Молоко</a></li>
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Кисломолочные продукты</a></li>
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Кефир, ряженка</a></li>
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Сливки</a></li>
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Сметана</a></li>
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Сырки творожные</a></li>
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Сгущенное молоко</a></li>
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Творог</a></li>
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Йогурты</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col">
+                                                        <h6 class="mt-3">Сыры</h6>
+                                                        <ul class="nav row flex-column gy-1">
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Полутвердые и твердые сыры</a></li>
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Мягкие, плавленные сыры</a></li>
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Рассыльные сыры</a></li>
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Брынза, фета</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="row row-cols-2 row-cols-md-1 gy-md-1">
+                                                    <div class="col">
+                                                        <h6 class="mt-3">Сливочное масло, маргарин</h6>
+                                                        <ul class="nav row flex-column gy-1">
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Масло</a></li>
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Маргарин</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col">
+                                                        <h6 class="mt-3">Яйцо</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sidebar-catalog-body px-5 py-2 position-absolute menu-left-cont" id="menu-right-2">
+                                        <h5>Безалкогольные напитки</h5>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="row row-cols-2 row-cols-md-1 gy-md-1">
+                                                    <div class="col">
+                                                        <h6 class="mt-3">Молочная продукция</h6>
+                                                        <ul class="nav row flex-column gy-1">
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Молоко</a></li>
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Кисломолочные продукты</a></li>
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Кефир, ряженка</a></li>
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Сливки</a></li>
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Сметана</a></li>
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Сырки творожные</a></li>
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Сгущенное молоко</a></li>
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Творог</a></li>
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Йогурты</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col">
+                                                        <h6 class="mt-3">Сыры</h6>
+                                                        <ul class="nav row flex-column gy-1">
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Полутвердые и твердые сыры</a></li>
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Мягкие, плавленные сыры</a></li>
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Рассыльные сыры</a></li>
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Брынза, фета</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="row row-cols-2 row-cols-md-1 gy-md-1">
+                                                    <div class="col">
+                                                        <h6 class="mt-3">Сливочное масло, маргарин</h6>
+                                                        <ul class="nav row flex-column gy-1">
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Масло</a></li>
+                                                            <li class="nav-item"><a href="/views/catalog_3.html" class="nav-link p-0">Маргарин</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col">
+                                                        <h6 class="mt-3">Яйцо</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form class="d-none d-md-block mb-lg-0 search-in" style="width: inherit;">
+                <div class="input-group vkuster">
+                    <a href="/views/search_results.html" class="input-group-text vkuster_search_icon" id="search_addon">
+                        <svg class="bi" width="18" height="21">
+                            <use xlink:href="/images/search.svg#vkuster-search"></use>
+                        </svg>
+                    </a>
+                    <input type="search" class="form-control vkuster_search" placeholder="Поиск по каталогу" aria-label="Search" aria-describedby="search_addon">
+                </div>
+                <div class="search-res" >
+                    <ul class="nav nav-sidebar flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link d-flex justify-content-between" href="/views/product_cart.html">
+                                <div class="col-img gx-0 d-flex align-items-center">
+                                    <img src="../images/good_1.png" alt="..."/>
+                                </div>
+                                <div class="col-title d-flex align-items-center">
+                                    Квас очаковский двойного брожения
+                                </div>
+                                <div class="col-price offset-1 d-flex justify-content-center flex-column">
+                                    <span class="good-initial-price">89,90 ₽</span>
+                                    <span class="good-discounted-price">34,90 ₽</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex justify-content-between" href="/views/product_cart.html">
+                                <div class="col-img gx-0 d-flex align-items-center">
+                                    <img src="../images/good_1.png" alt="..."/>
+                                </div>
+                                <div class="col-title d-flex align-items-center">
+                                    Квас очаковский двойного брожения
+                                </div>
+                                <div class="col-price offset-1 d-flex justify-content-center flex-column">
+                                    <span class="good-initial-price">89,90 ₽</span>
+                                    <span class="good-discounted-price">34,90 ₽</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex justify-content-between" href="#/views/product_cart.html">
+                                <div class="col-img gx-0 d-flex align-items-center">
+                                    <img src="../images/good_1.png" alt="..."/>
+                                </div>
+                                <div class="col-title d-flex align-items-center">
+                                    Квас очаковский двойного брожения
+                                </div>
+                                <div class="col-price offset-1 d-flex justify-content-center flex-column">
+                                    <span class="good-initial-price">89,90 ₽</span>
+                                    <span class="good-discounted-price">34,90 ₽</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex justify-content-between" href="/views/product_cart.html">
+                                <div class="col-img gx-0 d-flex align-items-center">
+                                    <img src="../images/good_1.png" alt="..."/>
+                                </div>
+                                <div class="col-title d-flex align-items-center">
+                                    Квас очаковский двойного брожения
+                                </div>
+                                <div class="col-price offset-1 d-flex justify-content-center flex-column">
+                                    <span class="good-initial-price">3389,90 ₽</span>
+                                    <span class="good-discounted-price">2389,90 ₽</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+            <a class="d-none d-md-flex col-6 col-md-auto btn btn-sm btn-vkuster-delivery vkuster-delivery" style="margin-right: 1rem; margin-left: 1rem" href="#" data-bs-toggle="modal" data-bs-target="#modalDelivery">
+                <svg class="bi" width="20" height="30">
+                    <use xlink:href="/images/location.svg#vkuster-location"></use>
+                </svg>
+                <span class="d-sm-inline-flex ms-2 d-md-none d-xl-inline-flex">Выберите адрес доставки или самовывозa</span>
+            </a>
+            <div class="navbar-nav flex-row position-relative">
+                <div class="nav-item text-nowrap">
+                    <a class="d-none d-md-inline-flex btn btn-menu btn-outline-secondary me-1 me-xl-0 me-xxl-2" href="#">
+                        <svg class="bi">
+                            <use xlink:href="/images/heart.svg#vkuster-heart"></use>
+                        </svg>
+                    </a>
+                </div>
+                <div class="nav-item d-md-none text-nowrap">
+                    <a class="btn btn-menu btn-outline-secondary me-1 me-xl-0 me-xxl-2" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSearch" aria-controls="offcanvasSearch">
+                        <svg class="bi" width="20" height="21">
+                            <use xlink:href="/images/search.svg#vkuster-search"></use>
+                        </svg>
+                    </a>
+                </div>
+                <div class="nav-item text-nowrap">
+                    <div class="dropdown position-static">
+                        <a class="btn btn-menu btn-outline-secondary me-1 me-xl-0 me-xxl-2 dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profile-dropdown" aria-expanded="false">
+                            <svg class="bi" width="13.799" height="16.898">
+                                <use xlink:href="/images/customer.svg#vkuster-customer"></use>
+                            </svg>
+                        </a>
+                        <div class="dropdown-menu vkuster-profile-dropdown dropdown-menu-end mt-3 border-0 position-absolute shadow" aria-labelledby="profile-dropdown">
+                        <div class="pb-2 pt-3 px-3 mx-2">
+                            <div class="d-flex justify-content-between">
+                                <h5>Виталий</h5>
+                                <a href="#">
+                                    <img src="/images/exit.svg" alt="" />
+                                </a>
+                            </div>
+                            <ul class="nav mt-2 nav-sidebar flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/views/profile_lk.html">Личный кабинет</a>
+                                    <a class="nav-link" href="/views/profile_order.html">Заказы</a>
+                                    <a class="nav-link" href="/views/profile_favorite.html">Избранное</a>
+                                    <a class="nav-link" href="/views/profile_review.html">Мои отзывы</a>
+                                    <a class="nav-link" href="/views/profile_bonus.html">Бонусный счет</a>
+                                    <a class="nav-link" href="/views/profile_gear.html">Настройки</a></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                        <div class="d-none dropdown-menu vkuster-profile-dropdown signup dropdown-menu-end mt-3 position-absolute shadow" aria-labelledby="profile-dropdown">
+                            <div class="pb-2 pt-3 px-3 mx-2 text-wrap">
+                                <div class="d-flex flex-column">
+                                    <h5>Регистрируйтесь, это выгодно!</h5>
+                                    <span>Участвуйте в бонусной программе</span>
+                                </div>
+                                <ul class="nav mt-3 nav-sidebar flex-column flex-wrap">
+                                    <li class="nav-item">
+                                        <div class="nav-link d-flex row">
+                                            <div class="col-2 gx-3 d-flex align-items-center">
+                                                <img class="w-100" src="/images/giftcard.svg" alt="..." />
+                                            </div>
+                                            <div class="col-10 gx-0 d-flex align-items-center">
+                                                Получайте бонусы и оплачивайте ими свои покупки
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <div class="nav-link d-flex row">
+                                            <div class="col-2 gx-3 d-flex align-items-center">
+                                                <img class="w-100" src="/images/coins.svg" alt="..." />
+                                            </div>
+                                            <div class="col-10 gx-0 d-flex align-items-center">
+                                                Специальные акции только для участников бонусной программы
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <div class="nav-link d-flex row">
+                                            <div class="col-2 gx-3 d-flex align-items-center">
+                                                <img class="w-100" src="/images/cashier.svg" alt="..." />
+                                            </div>
+                                            <div class="col-10 gx-0 d-flex align-items-center">
+                                                «Цена для своих» на готовую продукцию Вкустер
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <div class="nav-link d-flex row">
+                                            <div class="col-2 gx-3 d-flex align-items-center">
+                                                <img class="w-100" src="/images/moto_small.svg" alt="...">
+                                            </div>
+                                            <div class="col-10 gx-0 d-flex align-items-center">
+                                                Выгодные предложения на экспресс-доставку
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="d-flex mt-5">
+                                    <a href="#" class="btn w-100 btn-vkuster-general">
+                                        Присоединиться
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-item text-nowrap">
+                    <a href="/views/basket.html" class="btn btn-menu btn-outline-secondary position-relative">
+                        <svg class="bi" width="18.79" height="18.399">
+                            <use xlink:href="/images/cart.svg#vkuster-cart"></use>
+                        </svg>
+                        <span class="position-absolute translate-middle bg-vkuster-supply border border-light rounded-circle">
+                            24
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Delivery Options + Mobile Botton Menu -->
+    <nav id="sidebarMenu" class="d-md-none col-md-3 col-lg-2 bg-body sidebar collapse">
+        <div class="position-sticky">
+            <div class="container mt-3 mb-4 d-flex justify-content-between align-items-center">
+                <a href="">
+                    <img src="/images/logo.svg" alt="">
+                </a>
+                <button class="navbar-toggler d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false">
+                    <span class="close">
+                        <i class="bi bi-x"></i>
+                    </span>
+                    <!--<span class="navbar-toggler-icon">
+                        <i class="bi bi-list"></i>
+                    </span>-->
+                </button>
+            </div>
+            <div class="container vkuster-mobile-delivery">
+                <div class="row g-2 my-2 align-items-center justify-content-around">
+                    <div class="col-6 gx-2">
+                        <button class="btn btn-outline-vkuster-supply w-100">
+                            <div class="d-flex justify-content-between">
+                                <div class="align-items-center me-3">
+                                    <svg class="bi" width="22.143" height="18.858" >
+                                        <use xlink:href="/images/moto.svg#vkuster-moto"></use>
+                                    </svg>
+                                </div>
+                                <div class="d-flex flex-column align-items-start me-3">
+                                    <div class="header">
+                                        Доставка
+                                    </div>
+                                    <div class="mt-2 post-header text-muted">
+                                        Укажите ваш адрес
+                                    </div>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="col-6 gx-2">
+                        <button class="btn btn-outline-secondary w-100">
+                            <div class="d-flex justify-content-between">
+                                <div class="align-items-center me-3">
+                                    <svg class="bi" width="22" height="22" >
+                                        <use xlink:href="/images/groceries.svg#vkuster-grocery"></use>
+                                    </svg>
+                                </div>
+                                <div class="d-flex flex-column align-items-start me-3">
+                                    <div class="header">
+                                        Самовывоз
+                                    </div>
+                                    <div class="mt-2 post-header text-muted">
+                                        Выберите магазин
+                                    </div>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav nav-sidebar flex-column">
+                <li class="nav-item justify-content-between py-2">
+                    <a class="nav-link" href="/views/catalog_sale.html">
+                        <svg class="bi me-3" width="20.186" height="20.186">
+                            <use xlink:href="/images/discount.svg#vkuster-discount"></use>
+                        </svg>
+                        Товары по скидкам
+                    </a>
+                </li>
+                <li class="nav-item py-2">
+                    <a class="nav-link" href="/views/sale_catalog.html">
+                        <svg class="bi me-3" width="15.318" height="19.101">
+                            <use xlink:href="/images/hot_sales.svg#vkuster-hot-sales"></use>
+                        </svg>
+                        Акции
+                    </a>
+                </li>
+                <li class="nav-item py-2">
+                    <a class="nav-link" href="#">
+                        <svg class="bi me-3" width="21" height="15">
+                            <use xlink:href="/images/card.svg#vkuster-card"></use>
+                        </svg>
+                        Карта Вкустер
+                    </a>
+                </li>
+                <li class="nav-item py-2">
+                    <a class="nav-link" href="#">
+                        <svg class="bi me-3" width="19" height="19">
+                            <use xlink:href="/images/shops.svg#vkuster-shops"></use>
+                        </svg>
+                        Наши магазины
+                    </a>
+                </li>
+                <li class="nav-item py-2">
+                    <a class="nav-link" href="/views/catalog_sale.html">
+                        Только для самовывоза
+                    </a>
+                </li>
+                <li class="nav-item py-2">
+                    <a class="nav-link" href="/views/catalog_sale.html">
+                        Здоровое питание
+                    </a>
+                </li>
+                <li class="nav-item py-2">
+                    <a class="nav-link" href="/views/catalog_sale.html">
+                        На шашлыки со Вкустер
+                    </a>
+                </li>
+                <li class="nav-item py-1">
+                    <a class="nav-link" href="/views/recipes.html">
+                        Рецепты от Вкустер
+                    </a>
+                </li>
+                <li class="nav-item py-2">
+                    <a class="nav-link" href="/views/about.html">
+                        О Вкустер
+                    </a>
+                </li>
+                <li class="nav-item py-2">
+                    <a class="nav-link" href="/views/contacts.html">
+                        Контакты
+                    </a>
+                </li>
+                <li class="nav-item py-2">
+                    <a class="nav-link" href="/views/job.html">
+                        Работа во Вкустер
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Bottom Menu -->
+    <div class="nav-scroller">
+        <nav class="nav nav-underline nav-underline-menu justify-content-between container-fluid container-lg">
+            <a class="nav-link active" href="/views/catalog_sale.html">
+                <svg class="bi" width="20.186" height="20.186">
+                    <use xlink:href="/images/discount.svg#vkuster-discount"></use>
+                </svg>
+                Товары по скидкам
+            </a>
+            <a class="nav-link active" href="/views/sale.html">
+                <svg class="bi" width="15.318" height="19.101">
+                    <use xlink:href="/images/hot_sales.svg#vkuster-hot-sales"></use>
+                </svg>
+                Акции
+            </a>
+            <a class="nav-link active" href="#">Только для самовывоза</a>
+            <a class="nav-link active" href="#">На шашлыки со Вкустер</a>
+            <a class="nav-link active" href="#">Здоровое питание</a>
+            <a class="nav-link active" href="/views/recipes.html">Рецепты от Вкустер</a>
+            <a class="d-none d-md-block nav-link active" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-three-dots"></i>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/views/about.html">О Вкустер</a></li>
+                <li><a class="dropdown-item" href="/views/job.html">Вакансии</a></li>
+                <li><a class="dropdown-item" href="/views/contacts.html">Контакты</a></li>
+                <li><a class="dropdown-item" href="/views/news.html">Новости</a></li>
+                <li><a class="dropdown-item" href="#">Статьи</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<!-- Offcanvas Catalog -->
+<div class="offcanvas offcanvas-search overflow-hidden" tabindex="-1" id="offcanvasSearch">
+    <div class="row p-3">
+        <form class="col-12">
+            <div class="input-group vkuster">
+                    <span class="input-group-text vkuster_search_icon" id="search_addon_m">
+                        <svg class="bi" width="18" height="21">
+                            <use xlink:href="/images/search.svg#vkuster-search"></use>
+                        </svg>
+                    </span>
+                <input type="search" class="form-control vkuster_search" placeholder="Поиск по каталогу" aria-label="Search" aria-describedby="search_addon_m">
+            </div>
+        </form>
+    </div>
+    <div class="shadow h-100 flex-grow-1 d-flex flex-column overflow-auto">
+        <div class="offcanvas-header mt-1 justify-content-end">
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasSearch" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav nav-sidebar flex-column">
+                <li class="nav-item">
+                    <a class="nav-link row d-flex" href="#">
+                        <div class="col-2 gx-0 d-flex align-items-center">
+                            <img src="/images/good_1.png" alt="..."/>
+                        </div>
+                        <div class="col-6 d-flex align-items-center">
+                            Квас очаковский двойного брожения
+                        </div>
+                        <div class="col-3 offset-1 d-flex justify-content-center flex-column">
+                            <span class="good-initial-price">89,90 ₽</span>
+                            <span class="good-discounted-price">34,90 ₽</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link row d-flex" href="#">
+                        <div class="col-2 gx-0 d-flex align-items-center">
+                            <img src="/images/good_1.png" alt="..."/>
+                        </div>
+                        <div class="col-6 d-flex align-items-center">
+                            Квас очаковский двойного брожения
+                        </div>
+                        <div class="col-3 offset-1 d-flex justify-content-center flex-column">
+                            <span class="good-initial-price">89,90 ₽</span>
+                            <span class="good-discounted-price">34,90 ₽</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link row d-flex" href="#">
+                        <div class="col-2 gx-0 d-flex align-items-center">
+                            <img src="/images/good_1.png" alt="..."/>
+                        </div>
+                        <div class="col-6 d-flex align-items-center">
+                            Квас очаковский двойного брожения
+                        </div>
+                        <div class="col-3 offset-1 d-flex justify-content-center flex-column">
+                            <span class="good-initial-price">89,90 ₽</span>
+                            <span class="good-discounted-price">34,90 ₽</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link row d-flex" href="#">
+                        <div class="col-2 gx-0 d-flex align-items-center">
+                            <img src="/images/good_1.png" alt="..."/>
+                        </div>
+                        <div class="col-6 d-flex align-items-center">
+                            Квас очаковский двойного брожения
+                        </div>
+                        <div class="col-3 offset-1 d-flex justify-content-center flex-column">
+                            <span class="good-initial-price">89,90 ₽</span>
+                            <span class="good-discounted-price">34,90 ₽</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link row d-flex" href="#">
+                        <div class="col-2 gx-0 d-flex align-items-center">
+                            <img src="/images/good_1.png" alt="..."/>
+                        </div>
+                        <div class="col-6 d-flex align-items-center">
+                            Квас очаковский двойного брожения
+                        </div>
+                        <div class="col-3 offset-1 d-flex justify-content-center flex-column">
+                            <span class="good-initial-price">89,90 ₽</span>
+                            <span class="good-discounted-price">34,90 ₽</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link row d-flex" href="#">
+                        <div class="col-2 gx-0 d-flex align-items-center">
+                            <img src="/images/good_1.png" alt="..."/>
+                        </div>
+                        <div class="col-6 d-flex align-items-center">
+                            Квас очаковский двойного брожения
+                        </div>
+                        <div class="col-3 offset-1 d-flex justify-content-center flex-column">
+                            <span class="good-initial-price">89,90 ₽</span>
+                            <span class="good-discounted-price">34,90 ₽</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link row d-flex" href="#">
+                        <div class="col-2 gx-0 d-flex align-items-center">
+                            <img src="/images/good_1.png" alt="..."/>
+                        </div>
+                        <div class="col-6 d-flex align-items-center">
+                            Квас очаковский двойного брожения
+                        </div>
+                        <div class="col-3 offset-1 d-flex justify-content-center flex-column">
+                            <span class="good-initial-price">89,90 ₽</span>
+                            <span class="good-discounted-price">34,90 ₽</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link row d-flex" href="#">
+                        <div class="col-2 gx-0 d-flex align-items-center">
+                            <img src="/images/good_1.png" alt="..."/>
+                        </div>
+                        <div class="col-6 d-flex align-items-center">
+                            Квас очаковский двойного брожения
+                        </div>
+                        <div class="col-3 offset-1 d-flex justify-content-center flex-column">
+                            <span class="good-initial-price">89,90 ₽</span>
+                            <span class="good-discounted-price">34,90 ₽</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="offcanvas offcanvas-catalog shadow" tabindex="-1" id="offcanvasCatalog">
+    <div class="offcanvas-body">
+        <ul class="nav nav-sidebar flex-column">
+            <li class="nav-item">
+                <a class="nav-link row" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCatalog2" aria-controls="offcanvasCatalog2">
+                    <div class="col-1 gx-0 d-flex align-items-center">
+                        <img src="/images/milk.png" alt="..." />
+                    </div>
+                    <div class="col-10 offset-1 d-flex align-items-center">
+                        Молоко, сыр, яйца
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link row" href="#">
+                    <div class="col-1 gx-0 d-flex align-items-center">
+                        <img src="/images/grocery.png" alt="..." />
+                    </div>
+                    <div class="col-10 offset-1 d-flex align-items-center">
+                        Бакалея
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link row" href="#">
+                    <div class="col-1 gx-0 d-flex align-items-center">
+                        <img src="/images/alcofree.png" alt="..." />
+                    </div>
+                    <div class="col-10 offset-1 d-flex align-items-center">
+                        Безалкогольные напитки
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link row" href="#">
+                    <div class="col-1 gx-0 d-flex align-items-center">
+                        <img src="/images/alco.png" alt="..." />
+                    </div>
+                    <div class="col-10 offset-1 d-flex align-items-center">
+                        Алкогольные напитки
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link row" href="#">
+                    <div class="col-1 gx-0 d-flex align-items-center">
+                        <img src="/images/nutrition.png" alt="..." />
+                    </div>
+                    <div class="col-10 offset-1 d-flex align-items-center">
+                        Детское питание
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link row" href="#">
+                    <div class="col-1 gx-0 d-flex align-items-center">
+                        <img src="/images/confectionary.png" alt="..." />
+                    </div>
+                    <div class="col-10 offset-1 d-flex align-items-center">
+                        Кондитерские изделия
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link row" href="#">
+                    <div class="col-1 gx-0 d-flex align-items-center">
+                        <img src="/images/coffee.png" alt="..." />
+                    </div>
+                    <div class="col-10 offset-1 d-flex align-items-center">
+                        Чай, кофе, какао
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link row" href="#">
+                    <div class="col-1 gx-0 d-flex align-items-center">
+                        <img src="/images/cooked.png" alt="..." />
+                    </div>
+                    <div class="col-10 offset-1 d-flex align-items-center">
+                        Готовая продукция
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link row" href="#">
+                    <div class="col-1 gx-0 d-flex align-items-center">
+                        <img src="/images/canned.png" alt="..." />
+                    </div>
+                    <div class="col-10 offset-1 d-flex align-items-center">
+                        Консервы
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link row" href="#">
+                    <div class="col-1 gx-0 d-flex align-items-center">
+                        <img src="/images/meat.png" alt="..." />
+                    </div>
+                    <div class="col-10 offset-1 d-flex align-items-center">
+                        Мясо, птица, колбасы
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link row" href="#">
+                    <div class="col-1 gx-0 d-flex align-items-center">
+                        <img src="/images/vegetables.png" alt="..." />
+                    </div>
+                    <div class="col-10 offset-1 d-flex align-items-center">
+                        Фрукты, овощи, зелень
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link row" href="#">
+                    <div class="col-1 gx-0 d-flex align-items-center">
+                        <img src="/images/vegetables.png" alt="..." />
+                    </div>
+                    <div class="col-10 offset-1 d-flex align-items-center">
+                        Замороженные продукты
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link row" href="#">
+                    <div class="col-1 gx-0 d-flex align-items-center">
+                        <img src="/images/diabetic.png" alt="..." />
+                    </div>
+                    <div class="col-10 offset-1 d-flex align-items-center">
+                        Диабетические продукты
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link row" href="#">
+                    <div class="col-1 gx-0 d-flex align-items-center">
+                        <img src="/images/bread.png" alt="..." />
+                    </div>
+                    <div class="col-10 offset-1 d-flex align-items-center">
+                        Хлебобулочные изделия
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link row" href="#">
+                    <div class="col-1 gx-0 d-flex align-items-center">
+                        <img src="/images/snacks.png" alt="..." />
+                    </div>
+                    <div class="col-10 offset-1 d-flex align-items-center">
+                        Снеки
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="offcanvas offcanvas-catalog" tabindex="-2" id="offcanvasCatalog2">
+    <div class="bg-secondary">
+        <nav class="p-2" aria-label="breadcrumb">
+            <ol class="breadcrumb px-2 my-2">
+                <li class="breadcrumb-item"></li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    <a href="#" class="text-muted" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCatalog" aria-controls="offcanvasCatalog">
+                        Молоко, сыр, яйца
+                    </a>
+                </li>
+            </ol>
+        </nav>
+    </div>
+    <div class="offcanvas-body px-0 py-2">
+        <ul class="nav nav-sidebar flex-column">
+            <li class="nav-item justify-content-between py-2">
+                <a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCatalog3" aria-controls="offcanvasCatalog3">
+                    Молочная продукции
+                </a>
+            </li>
+            <li class="nav-item py-2">
+                <a class="nav-link" href="#">
+                    Сыры
+                </a>
+            </li>
+            <li class="nav-item py-2">
+                <a class="nav-link" href="#">
+                    Сливочное масло, маргарин
+                </a>
+            </li>
+            <li class="nav-item py-2">
+                <a class="nav-link" href="#">
+                    Яйцо
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="offcanvas offcanvas-catalog" tabindex="-3" id="offcanvasCatalog3">
+    <div class="bg-secondary">
+        <nav class="p-2" aria-label="breadcrumb">
+            <ol class="breadcrumb px-2 my-2">
+                <li class="breadcrumb-item"></li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    <a href="#" class="text-muted" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCatalog2" aria-controls="offcanvasCatalog2">
+                        Молоко, сыр, яйца
+                    </a>
+                </li>
+            </ol>
+        </nav>
+    </div>
+    <div class="offcanvas-body px-0 py-2">
+        <ul class="nav nav-sidebar flex-column">
+            <li class="nav-item py-2">
+                <a class="nav-link" href="#">
+                    Молоко
+                </a>
+            </li>
+            <li class="nav-item py-2">
+                <a class="nav-link" href="#">
+                    Кисломолочные продукты
+                </a>
+            </li>
+            <li class="nav-item py-2">
+                <a class="nav-link" href="#">
+                    Кефир, ряженка
+                </a>
+            </li>
+            <li class="nav-item py-2">
+                <a class="nav-link" href="#">
+                    Сливки
+                </a>
+            </li>
+            <li class="nav-item py-2">
+                <a class="nav-link" href="#">
+                    Сметана
+                </a>
+            </li>
+            <li class="nav-item py-2">
+                <a class="nav-link" href="#">
+                    Сырки творожные
+                </a>
+            </li>
+            <li class="nav-item py-2">
+                <a class="nav-link" href="#">
+                    Сгущенное молоко
+                </a>
+            </li>
+            <li class="nav-item py-2">
+                <a class="nav-link" href="#">
+                    Творог
+                </a>
+            </li>
+            <li class="nav-item py-2">
+                <a class="nav-link" href="#">
+                    Йогурты
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- Content -->
+<div class="container-fluid container-lg">
+    <!-- Top Banner -->
+    <div class="row py-3 my-5 home-top-banner">
+        <div class="col-12 col-xl-9">
+            <!--<div id="mainCarousel" class="main-carousel carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                </div>
+                <div class="carousel-inner" >
+                    <div data-bs-interval="4000" class="carousel-item active">
+                        <img src="/images/asset-1.png" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-block">
+                            <h1 class="carousel-header">Вкустер доставляем домой</h1>
+                            <p class="carousel-description">Заaказывайте на сайте и пользуйтесь экспресс-доставкой</p>
+                            <a href="#" class="btn carousel-action px-1 px-md-3 btn-light">К покупкам</a>
+                        </div>
+                    </div>
+                    <div data-bs-interval="4000" class="carousel-item">
+                        <img src="/images/slider_background.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div data-bs-interval="4000" class="carousel-item">
+                        <img src="/images/slider_background.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div data-bs-interval="4000" class="carousel-item">
+                        <img src="/images/slider_background.png" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+            </div>-->
+            <div class="swiper-container main-carousel carousel">
+                <div class="swiper-wrapper ">
+                    <div class="swiper-slide carousel-item"><img src="/images/asset-1.png" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-block">
+                            <h1 class="carousel-header fw-bold">Вкустер доставляем домой</h1>
+                            <p class="carousel-description">Заaказывайте на сайте и пользуйтесь экспресс-доставкой</p>
+                            <a href="#" class="btn carousel-action px-1 px-md-3 btn-light">К покупкам</a>
+                        </div></div>
+                    <div class="swiper-slide color-2"><img src="/images/slider_background.png" class="d-block w-100" alt="..."></div>
+                    <div class="swiper-slide color-3"><img src="/images/slider_background.png" class="d-block w-100" alt="..."></div>
+                    <div class="swiper-slide color-4"><img src="/images/slider_background.png" class="d-block w-100" alt="..."></div>
+                    <div class="swiper-slide color-5"><img src="/images/slider_background.png" class="d-block w-100" alt="..."></div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <div class="d-none d-xl-flex col-3">
+            <div class="card border-0 w-100">
+                <img src="/images/promotion.png" class="card-img-top" alt="...">
+            </div>
+        </div>
+    </div>
+    <!-- Benefits -->
+    <div class="py-3 my-5 main-1">
+        <div class="row py-3">
+            <div class="col-10 col-md-6">
+                <h3 class="roller-header">Выгодно со Вкустер</h3>
+            </div>
+            <div class="col-2 col-md-6 d-flex align-items-center justify-content-end">
+                <a href="/views/catalog_sale.html" class="btn btn-outline-vkuster-warning py-0 position-relative vkuster-roller-more">
+                    <span class="d-none d-md-block">Все товары по скидкам</span>
+                    <span></span>
+                </a>
+            </div>
+        </div>
+        <div class="card-roller py-3">
+            <a href="#">
+                <span class="badge badge-vkuster-category active">Молочная продукция</span>
+            </a>
+            <a href="#">
+                <span class="badge badge-vkuster-category">Макароны, крупы и бобовые</span>
+            </a>
+            <a href="#">
+                <span class="badge badge-vkuster-category">Холодный чай</span>
+            </a>
+            <a href="#">
+                <span class="badge badge-vkuster-category">Сухие смеси, каши</span>
+            </a>
+            <a href="#">
+                <span class="badge badge-vkuster-category">Кофе</span>
+            </a>
+            <a href="#">
+                <span class="badge badge-vkuster-category">Мясные консервы</span>
+            </a>
+        </div>
+        <div class="carousel-multiple">
+<!--        <div class="row card-roller-slick row-cols-1 row-cols-sm-2 row-cols-md-4 py-3">-->
+<!--            <div class="col roll-child"></div>-->
+            <div class="roll-child">
+
+                <div href="" class="card vkuster-good h-100">
+                    <div class="card-header border-0 bg-transparent">
+                        <div class="row align-items-center">
+                            <div class="col-9">
+                                <div class="hstack flex-wrap gap-1">
+                                    <span class="badge badge-vkuster-tags discount">-25%</span>
+                                    <span class="badge badge-vkuster-tags exclusive">эксклюзив</span>
+                                </div>
+                            </div>
+                            <div class="col-3 gx-0">
+                                <div class="hstack justify-content-end">
+                                    <a class="d-flex btn border-0 btn-outline-secondary btn-menu" href="#">
+                                        <svg class="bi">
+                                            <use href="/images/heart.svg#vkuster-heart"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+<!--                    <a href="/views/product_cart.html"></a>-->
+                    <div class="card-body">
+                        <div class="vstack gap-2 h-100 justify-content-start">
+                            <a href="/views/product_cart.html" class="hstack justify-content-center img-card">
+                                <img src="/images/main88_full.png" class="card-img-top" alt="...">
+                            </a>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="hstack">
+                                        <span class="good-rating"><i class="bi bi-star-fill"></i> 4.92</span>
+                                        <span class="good-comments"><i class="bi bi-chat-dots-fill"></i> 0</span>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="hstack justify-content-end">
+                                        <span class="good-weight">230 г.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="/views/product_cart.html" class="card-text">Каша овсяная ассорти № 16 с молоком (с грушей, клубникой, яблоком)</a>
+                            <div class="row good-price-row">
+                                <div class="col">
+                                    <div class="vstack justify-content-start">
+                                        <span class="good-initial-price">89,90 ₽</span>
+                                        <span class="good-discounted-price">34,90 ₽</span>
+                                    </div>
+                                </div>
+                                <div class="col position-relative d-flex align-items-center justify-content-end add-cart">
+                                    <div class="hstack pt-2 justify-content-end price-btn" id="price-btn" style="z-index: 2;">
+                                        <a class="d-flex btn btn-menu vkuster-good-to-cart">
+                                            <svg class="bi w-100">
+                                                <use href="/images/cart.svg#vkuster-cart"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div class="num-block position-absolute" id="price-in" style="z-index: 1;">
+                                        <div class="num-in d-flex justify-content-between align-items-center">
+                                            <span class="minus dis "></span>
+                                            <div class="d-flex align-items-center justify-content-center num-input">
+                                                <input type="text" class="in-num  border-end-0 btn-outline-vkuster-general" value="1" readonly=""> шт.
+                                            </div>
+                                            <span class="plus"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--<span class="input_spinner">
+                                      <button class="minus"></button>
+                                      <input type="text" placeholder="0"  class="input-n" />
+                                      <button class="plus"></button>
+                                </span>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="roll-child">
+                <div class="card vkuster-good h-100">
+                    <div class="card-header border-0 bg-transparent">
+                        <div class="row align-items-center">
+                            <div class="col-9">
+                                <div class="hstack flex-wrap gap-1">
+                                    <span class="badge badge-vkuster-tags discount">-25%</span>
+                                    <span class="badge badge-vkuster-tags new">новинка</span>
+                                </div>
+                            </div>
+                            <div class="col-3 gx-0">
+                                <div class="hstack justify-content-end">
+                                    <a class="d-flex btn border-0 btn-outline-secondary btn-menu" href="#">
+                                        <svg class="bi">
+                                            <use href="/images/heart.svg#vkuster-heart"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="vstack gap-2 h-100 justify-content-start">
+                            <a href="/views/product_cart.html" class="hstack justify-content-center img-card">
+                                <img src="/images/main_full@2x.png" class="card-img-top" alt="...">
+                            </a>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="hstack">
+                                        <span class="good-rating"><i class="bi bi-star-fill"></i> 4.92</span>
+                                        <span class="good-comments"><i class="bi bi-chat-dots-fill"></i> 0</span>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="hstack justify-content-end">
+                                        <span class="good-weight">500 г.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="/views/product_cart.html" class="card-text">Манная крупа ТМ Ясно солнышко</a>
+                            <div class="row good-price-row">
+                                <div class="col">
+                                    <div class="vstack justify-content-start">
+                                        <span class="good-initial-price opacity-0">0,00 ₽</span>
+                                        <span class="good-discounted-price">89,90 ₽</span>
+                                    </div>
+                                </div>
+                                <div class="col position-relative d-flex align-items-center justify-content-end add-cart">
+                                    <div class="hstack pt-2 justify-content-end price-btn" id="price-btn-2" style="z-index: 2;">
+                                        <a class="d-flex btn btn-menu vkuster-good-to-cart">
+                                            <svg class="bi w-100">
+                                                <use href="/images/cart.svg#vkuster-cart"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div class="num-block position-absolute" id="price-in-2" style="z-index: 1;">
+                                        <div class="num-in d-flex justify-content-between align-items-center">
+                                            <span class="minus dis "></span>
+                                            <div class="d-flex align-items-center justify-content-center num-input">
+                                                <input type="text" class="in-num  border-end-0 btn-outline-vkuster-general" value="1" readonly=""> шт.
+                                            </div>
+                                            <span class="plus"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="roll-child">
+                <div class="card vkuster-good h-100">
+                    <div class="card-header border-0 bg-transparent">
+                        <div class="row align-items-center">
+                            <div class="col-9">
+                                <div class="hstack flex-wrap gap-1">
+                                    <span class="badge badge-vkuster-tags discount">-25%</span>
+                                    <span class="badge badge-vkuster-tags customer-choice">выбор покупателей</span>
+                                </div>
+                            </div>
+                            <div class="col-3 gx-0">
+                                <div class="hstack justify-content-end">
+                                    <a class="d-flex btn border-0 btn-outline-secondary btn-menu" href="#">
+                                        <svg class="bi">
+                                            <use href="/images/heart.svg#vkuster-heart"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="vstack gap-2 h-100 justify-content-start">
+                            <a href="/views/product_cart.html" class="d-flex justify-content-center">
+                                <img src="/images/main_full2222@2x.png" class="card-img-top" alt="...">
+                            </a>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="hstack">
+                                        <span class="good-rating"><i class="bi bi-star-fill"></i> 4.92</span>
+                                        <span class="good-comments"><i class="bi bi-chat-dots-fill"></i> 0</span>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="hstack justify-content-end">
+                                        <span class="good-weight">0,65 л.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="/views/product_cart.html" class="card-text">Масло нерафинированное Ставрополье</a>
+                            <div class="row good-price-row">
+                                <div class="col">
+                                    <div class="vstack justify-content-start">
+                                        <span class="good-initial-price">78,70 ₽</span>
+                                        <span class="good-discounted-price">65,80 ₽</span>
+                                    </div>
+                                </div>
+                                <div class="col position-relative d-flex align-items-center justify-content-end add-cart">
+                                    <div class="hstack pt-2 justify-content-end price-btn" id="price-btn-3" style="z-index: 2;">
+                                        <a class="d-flex btn btn-menu vkuster-good-to-cart">
+                                            <svg class="bi w-100">
+                                                <use href="/images/cart.svg#vkuster-cart"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div class="num-block position-absolute" id="price-in-3" style="z-index: 1;">
+                                        <div class="num-in d-flex justify-content-between align-items-center">
+                                            <span class="minus dis "></span>
+                                            <div class="d-flex align-items-center justify-content-center num-input">
+                                                <input type="text" class="in-num  border-end-0 btn-outline-vkuster-general" value="1" readonly=""> шт.
+                                            </div>
+                                            <span class="plus"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="roll-child">
+                <div class="card vkuster-good h-100">
+                    <div class="card-header border-0 bg-transparent">
+                        <div class="row align-items-center">
+                            <div class="col-9">
+                                <div class="hstack flex-wrap gap-1">
+                                    <span class="badge badge-vkuster-tags discount">-50%</span>
+                                </div>
+                            </div>
+                            <div class="col-3 gx-0">
+                                <div class="hstack justify-content-end">
+                                    <a class="d-flex btn border-0 btn-outline-secondary btn-menu" href="#">
+                                        <svg class="bi">
+                                            <use href="/images/heart.svg#vkuster-heart"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="vstack gap-2 h-100 justify-content-start">
+                            <a href="/views/product_cart.html" class="d-flex justify-content-center">
+                                <img src="/images/main2222_full@2x.png" class="card-img-top" alt="...">
+                            </a>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="hstack">
+                                        <span class="good-rating"><i class="bi bi-star-fill"></i> 4.92</span>
+                                        <span class="good-comments"><i class="bi bi-chat-dots-fill"></i> 0</span>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="hstack justify-content-end">
+                                        <span class="good-weight">90 г.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="/views/product_cart.html" class="card-text">Масло нерафинированное Ставрополье</a>
+                            <div class="row good-price-row">
+                                <div class="col">
+                                    <div class="vstack justify-content-start">
+                                        <span class="good-initial-price">25,90 ₽</span>
+                                        <span class="good-discounted-price">19,90 ₽</span>
+                                    </div>
+                                </div>
+                                <div class="col position-relative d-flex align-items-center justify-content-end">
+                                    <div class="hstack pt-2 justify-content-end price-btn" id="price-btn-4" style="z-index: 2;">
+                                        <a class="d-flex btn btn-menu vkuster-good-to-cart">
+                                            <svg class="bi w-100">
+                                                <use href="/images/cart.svg#vkuster-cart"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div class="num-block position-absolute" id="price-in-4" style="z-index: 1;">
+                                        <div class="num-in d-flex justify-content-between align-items-center">
+                                            <span class="minus dis "></span>
+                                            <div class="d-flex align-items-center justify-content-center num-input">
+                                                <input type="text" class="in-num  border-end-0 btn-outline-vkuster-general" value="1" readonly=""> шт.
+                                            </div>
+                                            <span class="plus"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="roll-child">
+                <div class="card vkuster-good h-100">
+                    <div class="card-header border-0 bg-transparent">
+                        <div class="row align-items-center">
+                            <div class="col-9">
+                                <div class="hstack flex-wrap gap-1">
+                                    <span class="badge badge-vkuster-tags discount">-50%</span>
+                                </div>
+                            </div>
+                            <div class="col-3 gx-0">
+                                <div class="hstack justify-content-end">
+                                    <a class="d-flex btn border-0 btn-outline-secondary btn-menu" href="#">
+                                        <svg class="bi">
+                                            <use href="/images/heart.svg#vkuster-heart"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="vstack gap-2 h-100 justify-content-start">
+                            <a href="/views/product_cart.html" class="d-flex justify-content-center">
+                                <img src="/images/main2222_full@2x.png" class="card-img-top" alt="...">
+                            </a>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="hstack">
+                                        <span class="good-rating"><i class="bi bi-star-fill"></i> 4.92</span>
+                                        <span class="good-comments"><i class="bi bi-chat-dots-fill"></i> 0</span>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="hstack justify-content-end">
+                                        <span class="good-weight">90 г.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="/views/product_cart.html" class="card-text">Масло нерафинированное Ставрополье</a>
+                            <div class="row good-price-row">
+                                <div class="col">
+                                    <div class="vstack justify-content-start">
+                                        <span class="good-initial-price">25,90 ₽</span>
+                                        <span class="good-discounted-price">19,90 ₽</span>
+                                    </div>
+                                </div>
+                                <div class="col position-relative d-flex align-items-center justify-content-end">
+                                    <div class="hstack pt-2 justify-content-end price-btn" id="price-btn" style="z-index: 2;">
+                                        <a class="d-flex btn btn-menu vkuster-good-to-cart">
+                                            <svg class="bi w-100">
+                                                <use href="/images/cart.svg#vkuster-cart"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div class="num-block position-absolute" id="price-in" style="z-index: 1;">
+                                        <div class="num-in d-flex justify-content-between align-items-center">
+                                            <span class="minus dis "></span>
+                                            <div class="d-flex align-items-center justify-content-center num-input">
+                                                <input type="text" class="in-num  border-end-0 btn-outline-vkuster-general" value="1" readonly=""> шт.
+                                            </div>
+                                            <span class="plus"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="roll-child">
+                <div class="card vkuster-good h-100">
+                    <div class="card-header border-0 bg-transparent">
+                        <div class="row align-items-center">
+                            <div class="col-9">
+                                <div class="hstack flex-wrap gap-1">
+                                    <span class="badge badge-vkuster-tags discount">-50%</span>
+                                </div>
+                            </div>
+                            <div class="col-3 gx-0">
+                                <div class="hstack justify-content-end">
+                                    <a class="d-flex btn border-0 btn-outline-secondary btn-menu" href="#">
+                                        <svg class="bi">
+                                            <use href="/images/heart.svg#vkuster-heart"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="vstack gap-2 h-100 justify-content-start">
+                            <a href="/views/product_cart.html" class="d-flex justify-content-center">
+                                <img src="/images/main2222_full@2x.png" class="card-img-top" alt="...">
+                            </a>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="hstack">
+                                        <span class="good-rating"><i class="bi bi-star-fill"></i> 4.92</span>
+                                        <span class="good-comments"><i class="bi bi-chat-dots-fill"></i> 0</span>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="hstack justify-content-end">
+                                        <span class="good-weight">90 г.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="/views/product_cart.html" class="card-text">Масло нерафинированное Ставрополье</a>
+                            <div class="row good-price-row">
+                                <div class="col">
+                                    <div class="vstack justify-content-start">
+                                        <span class="good-initial-price">25,90 ₽</span>
+                                        <span class="good-discounted-price">19,90 ₽</span>
+                                    </div>
+                                </div>
+                                <div class="col position-relative d-flex align-items-center justify-content-end">
+                                    <div class="hstack pt-2 justify-content-end price-btn" id="price-btn" style="z-index: 2;">
+                                        <a class="d-flex btn btn-menu vkuster-good-to-cart">
+                                            <svg class="bi w-100">
+                                                <use href="/images/cart.svg#vkuster-cart"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div class="num-block position-absolute" id="price-in" style="z-index: 1;">
+                                        <div class="num-in d-flex justify-content-between align-items-center">
+                                            <span class="minus dis "></span>
+                                            <div class="d-flex align-items-center justify-content-center num-input">
+                                                <input type="text" class="in-num  border-end-0 btn-outline-vkuster-general" value="1" readonly=""> шт.
+                                            </div>
+                                            <span class="plus"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Actions -->
+    <div class="py-3">
+        <div class="row py-3">
+            <div class="col-10 col-md-6">
+                <h3 class="roller-header">Акции Вкустер</h3>
+            </div>
+            <div class="col-2 col-md-6 d-flex align-items-center justify-content-end">
+                <a href="/views/sale.html" class="btn btn-outline-vkuster-warning py-0 position-relative vkuster-roller-more">
+                    <span class="d-none d-md-block">Все акции</span>
+                    <span></span>
+                </a>
+            </div>
+        </div>
+<!--        <div class="carousel-multiple-triple b-1200-m">-->
+<!--            <div class="roll-child roll-child-image banner-item">-->
+<!--                <a href="/views/sale_catalog.html" class="card border-0 h-100">-->
+<!--                    <img src="/images/card_action1.png" class="card-img" alt="...">-->
+<!--                </a>-->
+<!--            </div>-->
+<!--            <div class="roll-child roll-child-image banner-item">-->
+<!--                <a href="/views/sale_catalog.html" class="card border-0 h-100">-->
+<!--                    <img src="/images/card_action2.png" class="card-img" alt="...">-->
+<!--                </a>-->
+<!--            </div>-->
+<!--            <div class="roll-child roll-child-image banner-item">-->
+<!--                <a href="/views/sale_catalog.html" class="card border-0 h-100">-->
+<!--                    <img src="/images/card_action3.png" class="card-img" alt="...">-->
+<!--                </a>-->
+<!--            </div>-->
+<!--        </div>-->
+        <div class="row banner-block">
+            <div class="col-4">
+                <div class="roll-child roll-child-image banner-item">
+                    <div class="card border-0 h-100">
+                        <a href="/views/sale_catalog.html" class="card border-0 h-100">
+                            <img src="/images/card_action1.png" class="card-img" alt="...">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="roll-child roll-child-image banner-item">
+                    <div class="card border-0 h-100">
+                        <a href="/views/sale_catalog.html" class="card border-0 h-100">
+                            <img src="/images/card_action2.png" class="card-img" alt="...">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="roll-child roll-child-image banner-item">
+                    <div class="card border-0 h-100">
+                        <a href="/views/sale_catalog.html" class="card border-0 h-100">
+                            <img src="/images/card_action3.png" class="card-img" alt="...">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bonus Banner -->
+    <div class="py-3">
+        <div class="row">
+            <div class="col-12">
+                <div class="roll-child roll-child-image banner-item big">
+                    <a href="/views/promo.html" class="card border-0 h-100">
+                        <img src="/images/huge_banner.png" class="card-img" style="min-height: 145px; object-fit: cover;">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Chef -->
+    <div class="py-3 my-5">
+        <div class="row py-3">
+            <div class="col-10 col-md-6">
+                <h3 class="roller-header">Готовит Вкустер</h3>
+            </div>
+            <div class="col-2 col-md-6 d-flex align-items-center justify-content-end">
+                <a href="#" class="btn btn-outline-vkuster-warning py-0 position-relative vkuster-roller-more">
+                    <span class="d-none d-md-block">Вся продукция</span>
+                    <span></span>
+                </a>
+            </div>
+        </div>
+        <div class="carousel-multiple">
+            <div class="roll-child">
+                <div class="card border-0 h-100">
+                    <img src="/images/vkuster_cooking.png" class="card-img" style="min-height: 100%; object-fit: cover">
+                </div>
+            </div>
+            <div class="roll-child">
+                <div class="card vkuster-chef h-100">
+                    <img src="/images/chef_1.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="vstack h-100 gap-3">
+                            <h5 class="card-title">Готовые блюда</h5>
+                            <p class="card-text">Собери без хлопот свой завтрак, обед или ужин</p>
+                            <a href="#" class="btn vkuster-chef-order">Заказать</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="roll-child">
+                <div class="card vkuster-chef h-100">
+                    <img src="/images/chef_2.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="vstack h-100 gap-3">
+                            <h5 class="card-title">Суши и роллы</h5>
+                            <p class="card-text">Побалуйте себя классическими рецептамил или эксклюзивом от наших поваров</p>
+                            <a href="#" class="btn vkuster-chef-order">Заказать</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="roll-child">
+                <div class="card vkuster-chef h-100">
+                    <img src="/images/chef_3.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="vstack h-100 gap-3">
+                            <h5 class="card-title">Сэндвичи</h5>
+                            <p class="card-text">Вкусный и питательный бутерброд, который легко взять с собой</p>
+                            <a href="#" class="btn vkuster-chef-order">Заказать</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="roll-child">
+                <div class="card vkuster-chef h-100">
+                    <img src="/images/chef_3.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="vstack h-100 gap-3">
+                            <h5 class="card-title">Сэндвичи</h5>
+                            <p class="card-text">Вкусный и питательный бутерброд, который легко взять с собой</p>
+                            <a href="#" class="btn vkuster-chef-order">Заказать</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Healthy -->
+    <div class="py-3 my-5">
+        <div class="row py-3">
+            <div class="col-10 col-md-6">
+                <h3 class="roller-header">Здоровое питание</h3>
+            </div>
+            <div class="col-2 col-md-6 d-flex align-items-center justify-content-end">
+                <a href="/views/catalog_1.html" class="btn btn-outline-vkuster-warning py-0 position-relative vkuster-roller-more">
+                    <span class="d-none d-md-block">Смотреть все</span>
+                    <span></span>
+                </a>
+            </div>
+        </div>
+        <div class="carousel-multiple">
+            <!--        <div class="row card-roller-slick row-cols-1 row-cols-sm-2 row-cols-md-4 py-3">-->
+            <!--            <div class="col roll-child"></div>-->
+            <div class="roll-child">
+                <div class="card vkuster-good h-100">
+                    <div class="card-header border-0 bg-transparent">
+                        <div class="row align-items-center">
+                            <div class="col-9">
+                                <div class="hstack flex-wrap gap-1">
+                                    <span class="badge badge-vkuster-tags discount">-25%</span>
+                                    <span class="badge badge-vkuster-tags exclusive">эксклюзив</span>
+                                </div>
+                            </div>
+                            <div class="col-3 gx-0">
+                                <div class="hstack justify-content-end">
+                                    <a class="d-flex btn border-0 btn-outline-secondary btn-menu" href="#">
+                                        <svg class="bi">
+                                            <use href="/images/heart.svg#vkuster-heart"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="vstack gap-2 h-100 justify-content-start">
+                            <a href="/views/product_cart.html" class="hstack justify-content-center img-card">
+                                <img src="/images/main88_full.png" class="card-img-top" alt="...">
+                            </a>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="hstack">
+                                        <span class="good-rating"><i class="bi bi-star-fill"></i> 4.92</span>
+                                        <span class="good-comments"><i class="bi bi-chat-dots-fill"></i> 0</span>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="hstack justify-content-end">
+                                        <span class="good-weight">230 г.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="/views/product_cart.html" class="card-text">Каша овсяная ассорти № 16 с молоком (с грушей, клубникой, яблоком)</a>
+                            <div class="row good-price-row">
+                                <div class="col">
+                                    <div class="vstack justify-content-start">
+                                        <span class="good-initial-price">89,90 ₽</span>
+                                        <span class="good-discounted-price">34,90 ₽</span>
+                                    </div>
+                                </div>
+                                <div class="col position-relative d-flex align-items-center justify-content-end">
+                                    <div class="hstack pt-2 justify-content-end" id="price-btn" style="z-index: 2;">
+                                        <a class="d-flex btn btn-menu vkuster-good-to-cart">
+                                            <svg class="bi w-100">
+                                                <use href="/images/cart.svg#vkuster-cart"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div class="num-block position-absolute" id="price-in" style="z-index: 1;">
+                                        <div class="num-in d-flex justify-content-between align-items-center">
+                                            <span class="minus dis "></span>
+                                            <div class="d-flex align-items-center justify-content-center num-input">
+                                                <input type="text" class="in-num  border-end-0 btn-outline-vkuster-general" value="1" readonly=""> шт.
+                                            </div>
+                                            <span class="plus"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="roll-child">
+                <div class="card vkuster-good h-100">
+                    <div class="card-header border-0 bg-transparent">
+                        <div class="row align-items-center">
+                            <div class="col-9">
+                                <div class="hstack flex-wrap gap-1">
+                                    <span class="badge badge-vkuster-tags discount">-25%</span>
+                                    <span class="badge badge-vkuster-tags new">новинка</span>
+                                </div>
+                            </div>
+                            <div class="col-3 gx-0">
+                                <div class="hstack justify-content-end">
+                                    <a class="d-flex btn border-0 btn-outline-secondary btn-menu" href="#">
+                                        <svg class="bi">
+                                            <use href="/images/heart.svg#vkuster-heart"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="vstack gap-2 h-100 justify-content-start">
+                            <a href="/views/product_cart.html" class="hstack justify-content-center img-card">
+                                <img src="/images/main_full@2x.png" class="card-img-top" alt="...">
+                            </a>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="hstack">
+                                        <span class="good-rating"><i class="bi bi-star-fill"></i> 4.92</span>
+                                        <span class="good-comments"><i class="bi bi-chat-dots-fill"></i> 0</span>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="hstack justify-content-end">
+                                        <span class="good-weight">500 г.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="/views/product_cart.html" class="card-text">Манная крупа ТМ Ясно солнышко</a>
+                            <div class="row good-price-row">
+                                <div class="col">
+                                    <div class="vstack justify-content-start">
+                                        <span class="good-initial-price opacity-0">0,00 ₽</span>
+                                        <span class="good-discounted-price">89,90 ₽</span>
+                                    </div>
+                                </div>
+                                <div class="col position-relative d-flex align-items-center justify-content-end">
+                                    <div class="hstack pt-2 justify-content-end" id="price-btn" style="z-index: 2;">
+                                        <a class="d-flex btn btn-menu vkuster-good-to-cart">
+                                            <svg class="bi w-100">
+                                                <use href="/images/cart.svg#vkuster-cart"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div class="num-block position-absolute" id="price-in" style="z-index: 1;">
+                                        <div class="num-in d-flex justify-content-between align-items-center">
+                                            <span class="minus dis "></span>
+                                            <div class="d-flex align-items-center justify-content-center num-input">
+                                                <input type="text" class="in-num  border-end-0 btn-outline-vkuster-general" value="1" readonly=""> шт.
+                                            </div>
+                                            <span class="plus"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="roll-child">
+                <div class="card vkuster-good h-100">
+                    <div class="card-header border-0 bg-transparent">
+                        <div class="row align-items-center">
+                            <div class="col-9">
+                                <div class="hstack flex-wrap gap-1">
+                                    <span class="badge badge-vkuster-tags discount">-25%</span>
+                                    <span class="badge badge-vkuster-tags customer-choice">выбор покупателей</span>
+                                </div>
+                            </div>
+                            <div class="col-3 gx-0">
+                                <div class="hstack justify-content-end">
+                                    <a class="d-flex btn border-0 btn-outline-secondary btn-menu" href="#">
+                                        <svg class="bi">
+                                            <use href="/images/heart.svg#vkuster-heart"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="vstack gap-2 h-100 justify-content-start">
+                            <a href="/views/product_cart.html" class="d-flex justify-content-center">
+                                <img src="/images/main_full2222@2x.png" class="card-img-top" alt="...">
+                            </a>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="hstack">
+                                        <span class="good-rating"><i class="bi bi-star-fill"></i> 4.92</span>
+                                        <span class="good-comments"><i class="bi bi-chat-dots-fill"></i> 0</span>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="hstack justify-content-end">
+                                        <span class="good-weight">0,65 л.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="/views/product_cart.html" class="card-text">Масло нерафинированное Ставрополье</a>
+                            <div class="row good-price-row">
+                                <div class="col">
+                                    <div class="vstack justify-content-start">
+                                        <span class="good-initial-price">78,70 ₽</span>
+                                        <span class="good-discounted-price">65,80 ₽</span>
+                                    </div>
+                                </div>
+                                <div class="col position-relative d-flex align-items-center justify-content-end">
+                                    <div class="hstack pt-2 justify-content-end" id="price-btn" style="z-index: 2;">
+                                        <a class="d-flex btn btn-menu vkuster-good-to-cart">
+                                            <svg class="bi w-100">
+                                                <use href="/images/cart.svg#vkuster-cart"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div class="num-block position-absolute" id="price-in" style="z-index: 1;">
+                                        <div class="num-in d-flex justify-content-between align-items-center">
+                                            <span class="minus dis "></span>
+                                            <div class="d-flex align-items-center justify-content-center num-input">
+                                                <input type="text" class="in-num  border-end-0 btn-outline-vkuster-general" value="1" readonly=""> шт.
+                                            </div>
+                                            <span class="plus"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="roll-child">
+                <div class="card vkuster-good h-100">
+                    <div class="card-header border-0 bg-transparent">
+                        <div class="row align-items-center">
+                            <div class="col-9">
+                                <div class="hstack flex-wrap gap-1">
+                                    <span class="badge badge-vkuster-tags discount">-50%</span>
+                                </div>
+                            </div>
+                            <div class="col-3 gx-0">
+                                <div class="hstack justify-content-end">
+                                    <a class="d-flex btn border-0 btn-outline-secondary btn-menu" href="#">
+                                        <svg class="bi">
+                                            <use href="/images/heart.svg#vkuster-heart"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="vstack gap-2 h-100 justify-content-start">
+                            <a href="/views/product_cart.html" class="d-flex justify-content-center">
+                                <img src="/images/main2222_full@2x.png" class="card-img-top" alt="...">
+                            </a>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="hstack">
+                                        <span class="good-rating"><i class="bi bi-star-fill"></i> 4.92</span>
+                                        <span class="good-comments"><i class="bi bi-chat-dots-fill"></i> 0</span>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="hstack justify-content-end">
+                                        <span class="good-weight">90 г.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="/views/product_cart.html" class="card-text">Масло нерафинированное Ставрополье</a>
+                            <div class="row good-price-row">
+                                <div class="col">
+                                    <div class="vstack justify-content-start">
+                                        <span class="good-initial-price">25,90 ₽</span>
+                                        <span class="good-discounted-price">19,90 ₽</span>
+                                    </div>
+                                </div>
+                                <div class="col position-relative d-flex align-items-center justify-content-end">
+                                    <div class="hstack pt-2 justify-content-end" id="price-btn" style="z-index: 2;">
+                                        <a class="d-flex btn btn-menu vkuster-good-to-cart">
+                                            <svg class="bi w-100">
+                                                <use href="/images/cart.svg#vkuster-cart"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div class="num-block position-absolute" id="price-in" style="z-index: 1;">
+                                        <div class="num-in d-flex justify-content-between align-items-center">
+                                            <span class="minus dis "></span>
+                                            <div class="d-flex align-items-center justify-content-center num-input">
+                                                <input type="text" class="in-num  border-end-0 btn-outline-vkuster-general" value="1" readonly=""> шт.
+                                            </div>
+                                            <span class="plus"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="roll-child">
+                <div class="card vkuster-good h-100">
+                    <div class="card-header border-0 bg-transparent">
+                        <div class="row align-items-center">
+                            <div class="col-9">
+                                <div class="hstack flex-wrap gap-1">
+                                    <span class="badge badge-vkuster-tags discount">-50%</span>
+                                </div>
+                            </div>
+                            <div class="col-3 gx-0">
+                                <div class="hstack justify-content-end">
+                                    <a class="d-flex btn border-0 btn-outline-secondary btn-menu" href="#">
+                                        <svg class="bi">
+                                            <use href="/images/heart.svg#vkuster-heart"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="vstack gap-2 h-100 justify-content-start">
+                            <a href="/views/product_cart.html" class="d-flex justify-content-center">
+                                <img src="/images/main2222_full@2x.png" class="card-img-top" alt="...">
+                            </a>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="hstack">
+                                        <span class="good-rating"><i class="bi bi-star-fill"></i> 4.92</span>
+                                        <span class="good-comments"><i class="bi bi-chat-dots-fill"></i> 0</span>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="hstack justify-content-end">
+                                        <span class="good-weight">90 г.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="/views/product_cart.html" class="card-text">Масло нерафинированное Ставрополье</a>
+                            <div class="row good-price-row">
+                                <div class="col">
+                                    <div class="vstack justify-content-start">
+                                        <span class="good-initial-price">25,90 ₽</span>
+                                        <span class="good-discounted-price">19,90 ₽</span>
+                                    </div>
+                                </div>
+                                <div class="col position-relative d-flex align-items-center justify-content-end">
+                                    <div class="hstack pt-2 justify-content-end" id="price-btn" style="z-index: 2;">
+                                        <a class="d-flex btn btn-menu vkuster-good-to-cart">
+                                            <svg class="bi w-100">
+                                                <use href="/images/cart.svg#vkuster-cart"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div class="num-block position-absolute" id="price-in" style="z-index: 1;">
+                                        <div class="num-in d-flex justify-content-between align-items-center">
+                                            <span class="minus dis "></span>
+                                            <div class="d-flex align-items-center justify-content-center num-input">
+                                                <input type="text" class="in-num  border-end-0 btn-outline-vkuster-general" value="1" readonly=""> шт.
+                                            </div>
+                                            <span class="plus"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="roll-child">
+                <div class="card vkuster-good h-100">
+                    <div class="card-header border-0 bg-transparent">
+                        <div class="row align-items-center">
+                            <div class="col-9">
+                                <div class="hstack flex-wrap gap-1">
+                                    <span class="badge badge-vkuster-tags discount">-50%</span>
+                                </div>
+                            </div>
+                            <div class="col-3 gx-0">
+                                <div class="hstack justify-content-end">
+                                    <a class="d-flex btn border-0 btn-outline-secondary btn-menu" href="#">
+                                        <svg class="bi">
+                                            <use href="/images/heart.svg#vkuster-heart"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="vstack gap-2 h-100 justify-content-start">
+                            <a href="/views/product_cart.html" class="d-flex justify-content-center">
+                                <img src="/images/main2222_full@2x.png" class="card-img-top" alt="...">
+                            </a>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="hstack">
+                                        <span class="good-rating"><i class="bi bi-star-fill"></i> 4.92</span>
+                                        <span class="good-comments"><i class="bi bi-chat-dots-fill"></i> 0</span>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="hstack justify-content-end">
+                                        <span class="good-weight">90 г.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="/views/product_cart.html" class="card-text">Масло нерафинированное Ставрополье</a>
+                            <div class="row good-price-row">
+                                <div class="col">
+                                    <div class="vstack justify-content-start">
+                                        <span class="good-initial-price">25,90 ₽</span>
+                                        <span class="good-discounted-price">19,90 ₽</span>
+                                    </div>
+                                </div>
+                                <div class="col position-relative d-flex align-items-center justify-content-end">
+                                    <div class="hstack pt-2 justify-content-end" id="price-btn" style="z-index: 2;">
+                                        <a class="d-flex btn btn-menu vkuster-good-to-cart">
+                                            <svg class="bi w-100">
+                                                <use href="/images/cart.svg#vkuster-cart"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div class="num-block position-absolute" id="price-in" style="z-index: 1;">
+                                        <div class="num-in d-flex justify-content-between align-items-center">
+                                            <span class="minus dis "></span>
+                                            <div class="d-flex align-items-center justify-content-center num-input">
+                                                <input type="text" class="in-num  border-end-0 btn-outline-vkuster-general" value="1" readonly=""> шт.
+                                            </div>
+                                            <span class="plus"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Two Banners -->
+    <div class="py-3 my-5 two-ban2">
+        <!--<div class="carousel-multiple-triple b-1200-m">
+            <div class="roll-child roll-child-image">
+                <a href="/views/job.html" class="card border-0 h-100 ">
+                    <img src="/images/half_banner1.png" class="card-img" alt="...">
+                </a>
+            </div>
+            <div class="roll-child roll-child-image">
+                <a href="/views/news_detail.html" class="card border-0 h-100">
+                    <img src="/images/half_banner2.png" class="card-img" alt="...">
+                </a>
+            </div>
+        </div>-->
+        <div class="row banner-block">
+            <div class="col-6">
+                <div class="roll-child roll-child-image banner-item middle">
+                    <div class="card border-0 h-100">
+                        <a href="/views/job.html" class="card border-0 h-100 ">
+                            <img src="/images/half_banner1.png" class="card-img" alt="...">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="roll-child roll-child-image banner-item middle">
+                    <div class="card border-0 h-100">
+                        <a href="/views/news_detail.html" class="card border-0 h-100">
+                            <img src="/images/half_banner2.png" class="card-img" alt="...">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Recipes -->
+    <div class="py-3 my-5">
+        <div class="row py-3">
+            <div class="col-10 col-md-6">
+                <h3 class="roller-header">Рецепты Вкустер</h3>
+            </div>
+            <div class="col-2 col-md-6 d-flex align-items-center justify-content-end">
+                <a href="/views/recipes.html" class="btn btn-outline-vkuster-warning py-0 position-relative vkuster-roller-more">
+                    <span class="d-none d-md-block">Все рецепты</span>
+                    <span></span>
+                </a>
+            </div>
+        </div>
+        <div class="carousel-multiple-triple carousel-upper-selector">
+            <a href="/views/recipes_cart.html" class="roll-child roll-child-image">
+                <div class="card border-0 vkuster-recipe h-100">
+                    <div class="w-100">
+                        <img src="/images/recipe_1.png" class="card-img-top" alt="...">
+                    </div>
+                    <div class="card-img-overlay">
+                        <span class="badge badge-vkuster-tags danger">готовим на гриле</span>
+                    </div>
+                    <div class="card-body px-0">
+                        <p class="card-text">Пекинская капуста по-азиатски с чесноком и соевым соусом на гриле</p>
+                        <div class="recipe-engage d-flex align-items-center">
+                            <span class="recipe-comments me-2">
+                                <i class="bi bi-chat-dots-fill"></i>
+                                23
+                            </span>
+                            <span class="recipe-like">
+                                <svg class="bi" width="11.734" height="11">
+                                    <use href="/images/like.svg#vkuster-like" />
+                                </svg>
+                                14
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="/views/recipes_cart.html" class="roll-child roll-child-image">
+                <div class="card border-0 vkuster-recipe h-100">
+                    <div class="w-100">
+                        <img src="/images/recipe_2.png" class="card-img-top" alt="...">
+                    </div>
+                    <div class="card-img-overlay">
+                        <span class="badge badge-vkuster-tags danger">сезонные рецепты</span>
+                    </div>
+                    <div class="card-body px-0">
+                        <p class="card-text">Русская окрошка на белом квасе</p>
+                        <div class="recipe-engage d-flex align-items-center">
+                            <span class="recipe-comments me-2">
+                                <i class="bi bi-chat-dots-fill"></i>
+                                23
+                            </span>
+                            <span class="recipe-like">
+                                <svg class="bi" width="11.734" height="11">
+                                    <use href="/images/like.svg#vkuster-like" />
+                                </svg>
+                                14
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="/views/recipes_cart.html" class="roll-child roll-child-image">
+                <div class="card border-0 vkuster-recipe h-100">
+                    <div class="w-100">
+                        <img src="/images/recipe_3.png" class="card-img-top" alt="...">
+                    </div>
+                    <div class="card-img-overlay">
+                        <span class="badge badge-vkuster-tags danger">правильное питание</span>
+                    </div>
+                    <div class="card-body px-0">
+                        <p class="card-text">Льняная каша с ревенем</p>
+                        <div class="recipe-engage d-flex align-items-center">
+                            <span class="recipe-comments me-2">
+                                <i class="bi bi-chat-dots-fill"></i>
+                                23
+                            </span>
+                            <span class="recipe-like">
+                                <svg class="bi" width="11.734" height="11">
+                                    <use href="/images/like.svg#vkuster-like" />
+                                </svg>
+                                14
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="/views/recipes_cart.html" class="roll-child roll-child-image">
+                <div class="card border-0 vkuster-recipe h-100">
+                    <div class="w-100">
+                        <img src="/images/recipe_1.png" class="card-img-top" alt="...">
+                    </div>
+                    <div class="card-img-overlay">
+                        <span class="badge badge-vkuster-tags danger">готовим на гриле</span>
+                    </div>
+                    <div class="card-body px-0">
+                        <p class="card-text">Пекинская капуста по-азиатски с чесноком и соевым соусом на гриле</p>
+                        <div class="recipe-engage d-flex align-items-center">
+                            <span class="recipe-comments me-2">
+                                <i class="bi bi-chat-dots-fill"></i>
+                                23
+                            </span>
+                            <span class="recipe-like">
+                                <svg class="bi" width="11.734" height="11">
+                                    <use href="/images/like.svg#vkuster-like" />
+                                </svg>
+                                14
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- Brands -->
+    <div class="py-3 my-5">
+        <div class="row pt-3 pb-2">
+            <div class="col-10 col-md-6">
+                <h3 class="roller-header">Любимые бренды</h3>
+            </div>
+            <div class="col-2 col-md-6 d-flex align-items-center justify-content-end">
+                <a href="/views/brand_search.html" class="btn btn-outline-vkuster-warning py-0 position-relative vkuster-roller-more">
+                    <span class="d-none d-md-block">Все бренды</span>
+                    <span></span>
+                </a>
+            </div>
+        </div>
+        <div class="carousel-multiple-sixfold">
+            <a href="/views/catalog_brand.html" class="roll-child roll-child-image d-flex align-items-center justify-content-center">
+                <img class="w-100" src="/images/brand_1.png" alt="brand 1" />
+            </a>
+            <a href="/views/catalog_brand.html" class="roll-child roll-child-image d-flex align-items-center justify-content-center">
+                <img class="w-100" src="/images/brand_2.png" alt="brand 2" />
+            </a>
+            <a href="/views/catalog_brand.html" class="roll-child roll-child-image d-flex align-items-center justify-content-center">
+                <img class="w-100" src="/images/brand_3.png" alt="brand 3" />
+            </a>
+            <a href="/views/catalog_brand.html" class="roll-child roll-child-image d-flex align-items-center justify-content-center">
+                <img class="w-100" src="/images/brand_4.png" alt="brand 4" />
+            </a>
+            <a href="/views/catalog_brand.html" class="roll-child roll-child-image d-flex align-items-center justify-content-center">
+                <img class="w-100" src="/images/brand_5.png" alt="brand 5" />
+            </a>
+            <a href="/views/catalog_brand.html" class="roll-child roll-child-image d-flex align-items-center justify-content-center">
+                <img class="w-100" src="/images/brand_6.png" alt="brand 6" />
+            </a>
+        </div>
+    </div>
+    <!-- News -->
+    <div class="py-3 my-5">
+        <div class="row py-3">
+            <div class="col-10 col-md-6">
+                <h3 class="roller-header">Наши новости</h3>
+            </div>
+            <div class="col-2 col-md-6 d-flex align-items-center justify-content-end">
+                <a href="/views/news.html" class="btn btn-outline-vkuster-warning py-0 position-relative vkuster-roller-more">
+                    <span class="d-none d-md-block">Все новости</span>
+                    <span></span>
+                </a>
+            </div>
+        </div>
+        <div class="carousel-multiple carousel-upper-selector">
+            <a href="/views/news_detail.html" class="roll-child roll-child-image">
+                <div class="card border-0 vkuster-news h-100">
+                    <div class="w-100">
+                        <img src="/images/news_1.png" class="card-img-top" alt="...">
+                    </div>
+                    <div class="card-body px-0">
+                        <p class="card-text">Открытие магазина по адресу гп. Новоселье, ул. Невская, д. 10/5</p>
+                        <div class="d-flex d-flex">
+                            <span class="news-date">
+                                3 мая 2021 г.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="/views/news_detail.html" class="roll-child roll-child-image">
+                <div class="card border-0 vkuster-news h-100">
+                    <div class="w-100">
+                        <img src="/images/news_2.png" class="card-img-top" alt="...">
+                    </div>
+                    <div class="card-body px-0">
+                        <p class="card-text">Вкустер принял участие в социальной акции «Помоги ветерану»</p>
+                        <div class="d-flex d-flex">
+                            <span class="news-date">
+                                3 мая 2021 г.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="/views/news_detail.html" class="roll-child roll-child-image">
+                <div class="card border-0 vkuster-news h-100">
+                    <div class="w-100">
+                        <img src="/images/news_3.png" class="card-img-top" alt="...">
+                    </div>
+                    <div class="card-body px-0">
+                        <p class="card-text">Наш магазин посетил миллионный покупатель!</p>
+                        <div class="d-flex d-flex">
+                            <span class="news-date">
+                                3 мая 2021 г.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="/views/news_detail.html" class="roll-child roll-child-image">
+                <div class="card border-0 vkuster-news h-100">
+                    <div class="w-100">
+                        <img src="/images/news_4.png" class="card-img-top" alt="...">
+                    </div>
+                    <div class="card-body px-0">
+                        <p class="card-text">Вкустер на Малодетскосельском проспекте</p>
+                        <div class="d-flex d-flex">
+                            <span class="news-date">
+                                3 мая 2021 г.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="/views/news_detail.html" class="roll-child roll-child-image">
+                <div class="card border-0 vkuster-news h-100">
+                    <div class="w-100">
+                        <img src="/images/news_1.png" class="card-img-top" alt="...">
+                    </div>
+                    <div class="card-body px-0">
+                        <p class="card-text">Открытие магазина по адресу гп. Новоселье, ул. Невская, д. 10/5</p>
+                        <div class="d-flex d-flex">
+                            <span class="news-date">
+                                3 мая 2021 г.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <h3 class="fw-bold">Магазины Вкустер</h3>
+</div>
+<!-- Map Content -->
+<div class="gx-0 gx-sm-2 container-lg">
+    <!-- Maps -->
+    <div class="py-3">
+        <div class="card vkuster-map border-0 border-radius-12">
+            <!-- add to div id=maps class=card-img -->
+<!--            <img src="/images/maps.png" class="card-img" alt="maps"/>-->
+            <iframe src="https://yandex.ru/map-widget/v1/-/CCUV5PtFoA" width="100%" height="600" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe>
+
+            <div class="card-img-overlay">
+                <div class="row gy-3 flex-sm-row-reverse">
+                    <div class="col">
+                        <div class="hstack gap-3">
+                            <a href="/views/delivery.html" class="btn border-0 shadow border-radius-12 btn-light bg-white">
+                                <div class="hstack px-3 gap-2">
+                                <span>
+                                    <svg class="bi" width="22" height="17">
+                                        <use href="/images/moto.svg#vkuster-moto"></use>
+                                    </svg>
+                                </span>
+                                    <span class="gray-muted fw-normal text-dark">
+                                    Доставка
+                                </span>
+
+                                </div>
+                            </a>
+                            <a href="#" class="btn border-0 shadow border-radius-12 btn-light bg-white">
+                                <div class="hstack px-3 gap-2">
+                                <span class="text-vkuster-supply">
+                                    <svg class="bi" width="22" height="17">
+                                        <use href="/images/groceries.svg#vkuster-grocery"/>
+                                    </svg>
+                                </span>
+                                    <span class="gray-muted fw-normal text-dark">
+                                    Самовывоз
+                                </span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="hstack">
+                            <div class="input-group vkuster">
+                                <input type="text" class="form-control vkuster_map_search"
+                                       placeholder="Найти магазин" aria-label="Search"
+                                       aria-describedby="search_addon2">
+                                <span class="input-group-text vkuster_map_search_icon" id="search_addon2">
+                                <svg class="bi" width="18" height="21">
+                                    <use href="/images/search.svg#vkuster-search"/>
+                                </svg>
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Content -->
+<div class="container-fluid container-lg">
+    <!-- About -->
+    <div class="py-3 my-5">
+        <div class="row py-3">
+            <div class="col-12 col-md-6">
+                <h3 class="roller-header">О компании</h3>
+            </div>
+        </div>
+        <div class="py-3">
+            <div class="row">
+                <div class="col-12 col-md-10 col-lg-8">
+                    <p class="text-story my-1">Вкустер — это сеть ярких магазинов, расположенных по всему городу. Наша цель — сделать так, чтобы жители каждого района могли покупать свежие и вкусные продукты.</p>
+                    <p class="text-story my-1">У нас есть все: Продукты, Непродовольственные товары, Выпечка собственного производства, Кулинария с авторскими блюдами, Кофе с собой, Кафе «Вкустер+» с напитками и закусками</p>
+                    <a href="/views/about.html" class="btn vkuster-link-more position-relative">Подробнее</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Delivery Options -->
+<div class="modal vkuster-delivery-modal fade" id="modalDelivery" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="backdropDeliveryLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-fullscreen-lg-down modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header end-0 border-0">
+                <h5 class="d-xl-none modal-title" id="backdropDeliveryLabels">Выберите, как вы хотите получать заказ</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row overflow-hidden flex-grow-1 g-3 mx-lg-0 gx-lg-0 h-100 row-cols-1 row-cols-lg-2">
+                    <div class="col flex-grow-1">
+                        <div class="vstack modal-sidebar gap-3">
+                            <h5 class="modal-title d-none d-lg-block" id="backdropDeliveryLabel">Выберите, как вы хотите получать заказ</h5>
+                            <div class="nav vkuster-mobile-delivery nav-pills" id="v-pills-tab" role="tablist" aria-orientation="horizontal">
+                                <a class="btn nav-link active btn-outline-secondary" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                                    <div class="hstack align-items-start h-100 mb-1 p-1 gap-3">
+                                        <div class="hstack delivery-icon align-items-start">
+                                            <svg class="bi" width="22.143" height="18.858" >
+                                                <use href="../images/moto.svg#vkuster-moto"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="vstack gap-2 justify-content-start align-items-start">
+                                            <div class="header">
+                                                Доставка
+                                            </div>
+                                            <div class="post-header text-wrap text-start text-muted">
+                                                Укажите ваш адрес
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a class="btn nav-link btn-outline-secondary" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                                    <div class="hstack align-items-start mb-1 h-100 p-1 gap-3">
+                                        <div class="hstack delivery-icon align-items-start">
+                                            <svg class="bi" width="22" height="22" >
+                                                <use href="../images/groceries.svg#vkuster-grocery"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="vstack justify-content-start align-items-start gap-2">
+                                            <div class="header">
+                                                Самовывоз
+                                            </div>
+                                            <div class="post-header text-wrap text-start text-muted">
+                                                Выберите магазин из списка
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <form class="d-flex justify-content-between">
+                                <div class="input-group me-3 vkuster">
+                                    <span class="input-group-text vkuster_search_icon" id="search_address">
+                                        <svg class="bi" width="18" height="21">
+                                            <use xlink:href="../images/search.svg#vkuster-search"></use>
+                                        </svg>
+                                    </span>
+                                    <input type="search" class="form-control vkuster_search" placeholder="Введите ваш адрес"
+                                           aria-label="Search" aria-describedby="search_address">
+                                </div>
+                                <button type="submit" class="btn px-4 btn-vkuster-general">
+                                    Выбрать
+                                </button>
+                            </form>
+                            <span class="d-none d-lg-block form-label fw-normal text-center">продолжайте вводить данные, чтобы уточнить адрес или выберите</span>
+                            <ul class="dropdown-menu position-static d-none d-lg-block">
+                                <li><a class="dropdown-item text-wrap" href="#">пос. Красный бор, ул. Адмирала Мостецкого</a></li>
+                                <li><a class="dropdown-item text-wrap" href="#">пос. Красный бор, ул. Адмирала Мостецкого, дом 12/1, кв 193</a></li>
+                                <li><a class="dropdown-item text-wrap" href="#">пос. Красный бор, ул. Адмирала Мостецкого, дом 16/2</a></li>
+                                <li><a class="dropdown-item text-wrap" href="#">пос. Красный бор, ул. Адмирала Мостецкого, дом 16/2</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col flex-grow-1 overflow-auto vstack h-100">
+                        <div class="tab-content vstack flex-grow-1 overflow-auto position-relative" id="v-pills-tabContent">
+                            <div class="tab-pane fade position-relative show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                <img src="../images/maps2.png" class="mapping" alt="maps"/>
+                                <div class="info-block">
+                                    <div class="bg-white border-radius-12 p-3 w-100">
+                                        <span class="fw-normal gray-muted text-dark">
+                                            Доставка доступна только для адресов внутри отмеченных зон
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                                <ul class="nav shadow nav-pills bg-white border-radius-20 my-3" id="pills-tab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link px-lg-5 active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+                                            На карте
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link px-lg-5" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
+                                            Списком
+                                        </button>
+                                    </li>
+                                </ul>
+                                <div class="tab-content position-relative" id="pills-tabContent">
+                                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                                        <img src="../images/maps2.png" class="mapping" alt="maps"/>
+                                        <div class="map-info-window">
+                                            <div class="card shadow">
+                                                <div class="card-body vstack gap-2">
+                                                    <h6 class="card-title">Вкустер на ул. Лидии Зверевой</h6>
+                                                    <div class="hstack gap-2">
+                                                        <span class="text-vkuster-supply">
+                                                            <svg class="bi" width="17" height="17">
+                                                                <use href="../images/shops.svg#vkuster-shops" />
+                                                            </svg>
+                                                        </span>
+                                                        <span class="gray-muted fw-normal">Санкт-Петербург, улица Лидии Зверевой, 5к1</span>
+                                                    </div>
+                                                    <div class="hstack gap-2">
+                                                        <span class="text-vkuster-supply">
+                                                            <svg class="bi" width="17" height="17">
+                                                                <use href="../images/clock.svg#vkuster-clock" />
+                                                            </svg>
+                                                        </span>
+                                                        <span class="gray-muted fw-normal">Круглосуточно</span>
+                                                    </div>
+                                                    <div>
+                                                        <a class="card-link px-5 btn btn-vkuster-supply">Выбрать</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                        <div class="vkuster-shops-wrapper">
+                                            <div class="row gx-0">
+                                                <div class="col-12 border-bottom">
+                                                    <div class="d-flex py-3 vkuster-shops-list justify-content-between">
+                                                        <div class="d-flex align-items-start flex-column">
+                                                            <h4 class="list-header">Вкустер на ул. Лидии Зверевой</h4>
+                                                            <div class="list-item d-flex gap-2 align-items-center">
+                                                                <svg class="bi" width="16" height="16">
+                                                                    <use href="../images/shops.svg#vkuster-shops" />
+                                                                </svg>
+                                                                <span class="form-label">
+                                                                    Санкт-Петербург, улица Лидии Зверевой, 5к1
+                                                                </span>
+                                                            </div>
+                                                            <div class="list-item d-flex gap-2 align-items-center">
+                                                                <svg class="bi" width="16" height="16">
+                                                                    <use href="../images/clock.svg#vkuster-clock" />
+                                                                </svg>
+                                                                <span class="form-label">
+                                                                    Круглосуточно
+                                                                </span>
+                                                            </div>
+                                                            <div class="list-item text-dark">
+                                                                Магазин находится в ЖК Шуваловский
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex align-items-center justify-content-end">
+                                                            <a href="basket.html" class="card-link btn btn-sm vkuster-good-to-cart border-radius-12">
+                                                                Выбрать магазин
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row gx-0">
+                                                <div class="col-12 border-bottom">
+                                                    <div class="d-flex py-3 vkuster-shops-list justify-content-between">
+                                                        <div class="d-flex align-items-start flex-column">
+                                                            <h4 class="list-header">Вкустер на ул. Лидии Зверевой</h4>
+                                                            <div class="list-item d-flex gap-2 align-items-center">
+                                                                <svg class="bi" width="16" height="16">
+                                                                    <use href="../images/shops.svg#vkuster-shops" />
+                                                                </svg>
+                                                                <span class="form-label">
+                                                                    Санкт-Петербург, улица Лидии Зверевой, 5к1
+                                                                </span>
+                                                            </div>
+                                                            <div class="list-item d-flex gap-2 align-items-center">
+                                                                <svg class="bi" width="16" height="16">
+                                                                    <use href="../images/clock.svg#vkuster-clock" />
+                                                                </svg>
+                                                                <span class="form-label">
+                                                                    Круглосуточно
+                                                                </span>
+                                                            </div>
+                                                            <div class="list-item text-dark">
+                                                                Магазин находится в ЖК Шуваловский
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex align-items-center justify-content-end">
+                                                            <a href="basket.html" class="card-link btn btn-sm vkuster-good-to-cart border-radius-12">
+                                                                Выбрать магазин
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row gx-0">
+                                                <div class="col-12 border-bottom">
+                                                    <div class="d-flex py-3 vkuster-shops-list justify-content-between">
+                                                        <div class="d-flex align-items-start flex-column">
+                                                            <h4 class="list-header">Вкустер на ул. Лидии Зверевой</h4>
+                                                            <div class="list-item d-flex gap-2 align-items-center">
+                                                                <svg class="bi" width="16" height="16">
+                                                                    <use href="../images/shops.svg#vkuster-shops" />
+                                                                </svg>
+                                                                <span class="form-label">
+                                                                    Санкт-Петербург, улица Лидии Зверевой, 5к1
+                                                                </span>
+                                                            </div>
+                                                            <div class="list-item d-flex gap-2 align-items-center">
+                                                                <svg class="bi" width="16" height="16">
+                                                                    <use href="../images/clock.svg#vkuster-clock" />
+                                                                </svg>
+                                                                <span class="form-label">
+                                                                    Круглосуточно
+                                                                </span>
+                                                            </div>
+                                                            <div class="list-item text-dark">
+                                                                Магазин находится в ЖК Шуваловский
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex align-items-center justify-content-end">
+                                                            <a href="basket.html" class="card-link btn btn-sm vkuster-good-to-cart border-radius-12">
+                                                                Выбрать магазин
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row gx-0">
+                                                <div class="col-12 border-bottom">
+                                                    <div class="d-flex py-3 vkuster-shops-list justify-content-between">
+                                                        <div class="d-flex align-items-start flex-column">
+                                                            <h4 class="list-header">Вкустер на ул. Лидии Зверевой</h4>
+                                                            <div class="list-item d-flex gap-2 align-items-center">
+                                                                <svg class="bi" width="16" height="16">
+                                                                    <use href="../images/shops.svg#vkuster-shops" />
+                                                                </svg>
+                                                                <span class="form-label">
+                                                                    Санкт-Петербург, улица Лидии Зверевой, 5к1
+                                                                </span>
+                                                            </div>
+                                                            <div class="list-item d-flex gap-2 align-items-center">
+                                                                <svg class="bi" width="16" height="16">
+                                                                    <use href="../images/clock.svg#vkuster-clock" />
+                                                                </svg>
+                                                                <span class="form-label">
+                                                                    Круглосуточно
+                                                                </span>
+                                                            </div>
+                                                            <div class="list-item text-dark">
+                                                                Магазин находится в ЖК Шуваловский
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex align-items-center justify-content-end">
+                                                            <a href="basket.html" class="card-link btn btn-sm vkuster-good-to-cart border-radius-12">
+                                                                Выбрать магазин
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Pre-Footer -->
+<div class="vkuster-subscription py-3 bg-vkuster-warning">
+    <div class="container-fluid container-lg gx-xl-0">
+        <div class="row row-cols-1 gx-0 row-cols-md-2 py-3 py-xl-5 align-items-start">
+            <div class="col-12 col-md-6">
+                <h3 class="text-header mb-sm-3">Выгодные акции только для своих</h3>
+                <p class="text-description">Подписывайтесь и получайте самые интересные предложения первыми</p>
+            </div>
+            <div class="col-12 col-md-6">
+                <form class="form-class w-100 hstack align-items-stretch align-items-sm-center gap-2 gap-md-0 position-relative mb-2 mb-sm-3">
+                    <input name="email" type="email" class="w-100 border-0" placeholder="Введите email" aria-describedby="send-form-button" aria-label="Подписка на рассылку" required/>
+                    <button class="h-auto" type="submit" id="send-form-button">
+                        Отправить
+                    </button>
+                </form>
+                <p class="text-offer">Нажимая «Подписаться», вы соглашаетесь с политикой конфиденциальности и условиями почтовой рассылки</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer -->
+<div class="overflow-hidden bg-secondary">
+    <footer class="footer container-fluid  container-lg py-4">
+        <div class="row mb-5">
+            <div class="col-md-3 g-3">
+                <img class="img-fluid mb-3" src="/images/logo_2.svg" alt="logo"/>
+                <div class="row row-cols-2 row-cols-md-1">
+                    <div class="col g-3">
+                        <a href="#" class="btn btn-light px-3 py-2 vkuster-mobile-store">
+                            <div class="row align-items-center gx-3">
+                                <div class="col-4 gx-0 d-flex justify-content-center">
+                                    <svg class="bi" width="29.135" height="34.671" >
+                                        <use href="/images/apple.svg#vkuster-apple"></use>
+                                    </svg>
+                                </div>
+                                <div class="col-8 gx-0 d-flex flex-column align-items-start">
+                                    <span class="mobile-label">
+                                        Загрузите в
+                                    </span>
+                                    <span class="mobile-name">
+                                        App Store
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col g-3">
+                        <a href="#" class="btn btn-light px-3 py-2 vkuster-mobile-store">
+                            <div class="row align-items-center gx-3">
+                                <div class="col-4 gx-0 d-flex justify-content-center align-items-center">
+                                    <svg class="bi w-100" width="29.687" height="32.932">
+                                        <use href="/images/gplay.svg#vkuster-gplay"></use>
+                                    </svg>
+                                </div>
+                                <div class="col-8 gx-0 d-flex flex-column align-items-start">
+                                    <span class="mobile-label">
+                                        Доступно в
+                                    </span>
+                                    <span class="mobile-name">
+                                        Google Play
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col g-3">
+                        <a href="#" class="btn btn-light px-3 py-2 vkuster-mobile-store">
+                            <div class="row align-items-center gx-3">
+                                <div class="col-4 gx-0 d-flex justify-content-center">
+                                    <svg class="bi" width="35.375" height="26.648" >
+                                        <use href="/images/huawei.svg#vkuster-huawei"></use>
+                                    </svg>
+                                </div>
+                                <div class="col-8 gx-0 d-flex flex-column align-items-start">
+                                    <span class="mobile-label">
+                                        Откройте в
+                                    </span>
+                                    <span class="mobile-name">
+                                        App Gallery
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 g-3">
+                <h5 class="footer-nav-header">Покупателям</h5>
+                <div class="row row-cols-2 row-cols-md-1 gy-md-1">
+                    <div class="col">
+                        <ul class="nav row flex-column gy-1">
+                            <li class="nav-item"><a href="/views/delivery.html" class="nav-link p-0">О доставке</a></li>
+                            <li class="nav-item"><a href="/views/kachestvo.html" class="nav-link p-0">Система качества</a></li>
+                            <li class="nav-item"><a href="/views/store_spisok.html" class="nav-link p-0">Наши магазины</a></li>
+                            <li class="nav-item"><a href="/views/zakaz.html" class="nav-link p-0">Как сделать заказ</a></li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <ul class="nav row flex-column gy-1">
+                            <li class="nav-item"><a href="/views/vozvrat.html" class="nav-link p-0">Возврат товара</a></li>
+                            <li class="nav-item"><a href="/views/promo.html" class="nav-link p-0">Программа лояльности</a></li></a></li>
+                            <li class="nav-item"><a href="/views/faq.html" class="nav-link p-0">Ответы на частные вопросы</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-6 g-3">
+                        <h5 class="footer-nav-header">Компания</h5>
+                        <div class="row row-cols-2 row-cols-md-1 gy-md-1">
+                            <div class="col">
+                                <ul class="nav row flex-column gy-1">
+                                    <li class="nav-item"><a href="/views/about.html" class="nav-link p-0">О «Вкустер»</a></li>
+                                    <li class="nav-item"><a href="/views/contacts.html" class="nav-link p-0">Контакты и реквизиты</a></li>
+                                    <li class="nav-item"><a href="/views/job.html" class="nav-link p-0">Вакансии</a></li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <ul class="nav row flex-column gy-1">
+                                    <li class="nav-item"><a href="/views/postavshiki.html" class="nav-link p-0">Партнерам и поставщикам</a></li>
+                                    <li class="nav-item"><a href="/views/legal.html" class="nav-link p-0">Правовая информация</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 g-3">
+                        <h5 class="footer-nav-header">Контакты</h5>
+                        <div class="row row-cols-2 row-cols-md-1">
+                            <div class="col gy-2">
+                                <ul class="nav footer-contacts row flex-column gy-0">
+                                    <li class="nav-item">
+                                        <h6 class="contacts-header">Служба поддержки</h6>
+                                    </li>
+                                    <li class="nav-item">
+                                        <h5 class="contacts-phone">8 (812) 777 53 07</h5>
+                                    </li>
+                                    <li class="nav-item">
+                                        <span class="contacts-hours">С 9:00 по 18:00 по будням</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col gy-2 gy-md-3">
+                                <ul class="nav footer-contacts row flex-column gy-0">
+                                    <li class="nav-item">
+                                        <h6 class="contacts-header">Интернет-магазин</h6>
+                                    </li>
+                                    <li class="nav-item">
+                                        <h5 class="contacts-phone">8 (812) 777 53 07</h5>
+                                    </li>
+                                    <li class="nav-item">
+                                        <span class="contacts-hours">С 9:00 до 21:00 по будням</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-6 gy-2 order-2 order-md-0">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#modalQuestion" class="btn px-4 py-1 vkuster-support btn-light">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <img class="me-2" src="/images/headphones.svg" alt="headphones" role="img" />
+                                Обратная связь
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-6 gy-2">
+                        <ul class="nav flex-row">
+                            <li class="nav-item me-2">
+                                <a href="#" class="btn px-0 btn-menu-small btn-light">
+                                    <svg class="bi" width="26.227" height="15.016">
+                                        <use href="/images/vk.svg#vkuster-vk"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="nav-item me-2">
+                                <a href="#" class="btn px-0 btn-menu-small btn-light">
+                                    <svg class="bi" width="22.5" height="22.5">
+                                        <use href="/images/instagram.svg#vkuster-instagram"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="nav-item me-2">
+                                <a href="#" class="btn btn-menu-small px-0 btn-light">
+                                    <svg class="bi" width="25.372" height="19.033">
+                                        <use href="/images/youtube.svg#vkuster-tube"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="nav-item me-2">
+                                <a href="#" class="btn btn-menu-small px-0 btn-light">
+                                    <svg class="bi" width="14.294" height="23.77">
+                                        <use href="/images/ok.svg#vkuster-ok"/>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center justify-content-between py-4 border-top">
+            <div class="col-5 col-md-4 gx-0">
+                <span class="footer-credits">© 2021 ООО «Вкустер»</span>
+            </div>
+            <div class="col-7 col-md-4 col-lg-3 gx-0 hstack justify-content-around">
+                <div class="hstack justify-content-center gap-2 gx-0">
+                    <div class="hstack justify-content-center">
+                        <a class="btn btn-vkuster-light px-0 vkuster-credit-card">
+                            <svg class="bi" width="55.697" height="17.071">
+                                <use href="/images/visa.svg#vkuster-visa"></use>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="hstack justify-content-center">
+                        <a class="btn btn-vkuster-light px-0 vkuster-credit-card">
+                            <svg class="bi" width="39.775" height="24.58">
+                                <use href="/images/mastercard.svg#vkuster-mastercard"></use>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="hstack justify-content-center">
+                        <a class="btn btn-vkuster-light px-0 vkuster-credit-card">
+                            <svg class="bi" width="63.59" height="18">
+                                <use href="/images/mir.svg#vkuster-mir"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-5 d-none d-md-flex align-items-center justify-content-end">
+                <span class="footer-credits">Дизайн и верстка <a href="https://oktta.ru/" target="_blank">Oktta</a></span>
+            </div>
+        </div>
+    </footer>
+</div>
+<!-- Vertically centered scrollable modal -->
+<div class="modal vkuster-faq-modal fade" id="modalQuestion" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="backdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content border-0 border-radius-20">
+            <div class="modal-header border-0">
+                <h5 class="modal-title" id="backdropLabel">Какой у вас вопрос?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="floatingPhoneNumber" placeholder="+7 900 000-00-00" required>
+                            <label for="floatingPhoneNumber">Номер телефона</label>
+                            <label class="invalid-feedback" for="floatingPhoneNumber">
+                                Поле заполнено неверно
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput">Email</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"></textarea>
+                            <label for="floatingTextarea2">Ваш вопрос</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-vkuster-general w-100">Отправить</button>
+                    </div>
+                    <div class="col-12">
+                        <span class="agreement">
+                            Нажимая кнопку «Отправить» и передавая свои данные, вы даете согласие на
+                            <a href="#">обработку персональных данных</a>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .map-widget-search-result-list-view__balloon-container{
+        display: none;
+    }
+    /*._app_ready .layout-control-group {
+        display: none;
+    }*/
+</style>
+</body>
+</html>
