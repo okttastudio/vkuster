@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+  <symbol class="bi bi-vkuster-ruble" id="vkuster-ruble" viewBox="0 0 20 20">
+    <g transform="translate(0 -0.25)">
+      <circle cx="10" cy="10" r="10" transform="translate(0 0.25)" fill="#efefef"/>
+      <text transform="translate(14 14.25)" fill="#91969f" font-size="11" font-family="Geometria-Medium, Geometria" font-weight="500"><tspan x="-7.722" y="0">₽</tspan></text>
+    </g>
+  </symbol>
+</svg>

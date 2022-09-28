@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="63.59" height="18">
+    <symbol class="bi bi-vkuster-mir" id="vkuster-mir" fill="currentColor" viewBox="0 0 63.59 18">
+        <g transform="translate(0 0)">
+            <path d="M17.135,0V.008a3.321,3.321,0,0,0-3.144,2.358c-.605,2.169-2.311,8.159-2.358,8.324h-.472S9.417,4.567,8.8,2.358A3.327,3.327,0,0,0,5.659,0H0V18H5.659V7.31h.472L9.432,18h3.93l3.3-10.682h.472V18h5.659V0Z" transform="translate(0 0)" fill-rule="evenodd"/>
+        </g>
+        <g transform="translate(25.231 0)">
+            <path d="M333.576,0a3.17,3.17,0,0,0-2.437,1.886l-4.009,8.8h-.472V0H321V18h5.345a3.263,3.263,0,0,0,2.515-1.886l3.93-8.8h.472V18h5.659V0Z" transform="translate(-321)" fill-rule="evenodd"/>
+        </g>
+        <g transform="translate(45.668 8.175)">
+            <path d="M581,104v9.825h5.659v-5.738h6.131A6.123,6.123,0,0,0,598.568,104Z" transform="translate(-581 -104)" fill-rule="evenodd"/>
+        </g>
+        <g transform="translate(44.874 0)">
+            <path d="M583.484,0H570.9a9.041,9.041,0,0,0,6.524,7.074h0a9.043,9.043,0,0,0,2.366.314h9.7a6.04,6.04,0,0,0,.126-1.258A6.129,6.129,0,0,0,583.484,0Z" transform="translate(-570.9)" fill-rule="evenodd"/>
+        </g>
+    </symbol>
+</svg>

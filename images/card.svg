@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+    <symbol class="bi bi-vkuster-card" id="vkuster-card" fill="currentColor" viewBox="0 0 21 16">
+        <g transform="translate(0 -3)">
+            <circle cx="1.5" cy="1.5" r="1.5" transform="translate(3 12.545)" />
+            <path d="M16.409,3H4.318A4.276,4.276,0,0,0,0,7.318v6.909a4.276,4.276,0,0,0,4.318,4.318h12.09a4.276,4.276,0,0,0,4.318-4.318V7.318A4.276,4.276,0,0,0,16.409,3ZM4.318,4.727h12.09A2.545,2.545,0,0,1,19,7.318H1.727A2.545,2.545,0,0,1,4.318,4.727Zm12.09,12.09H4.318a2.545,2.545,0,0,1-2.591-2.591V9.045H19v5.182A2.545,2.545,0,0,1,16.409,16.818Z"/>
+        </g>
+    </symbol>
+</svg>

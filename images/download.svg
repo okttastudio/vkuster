@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="14.256" height="14.256">
+  <symbol class="bi bi-vkuster-download" id="vkuster-download" fill="none" stroke="currentColor" viewBox="0 0 14.256 14.256">
+    <g transform="translate(-3.5 -3.5)">
+      <path d="M16.756,22.5v2.724a1.362,1.362,0,0,1-1.362,1.362H5.862A1.362,1.362,0,0,1,4.5,25.224V22.5" transform="translate(0 -9.829)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path d="M10.5,15l3.4,3.4,3.4-3.4" transform="translate(-3.276 -5.734)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path d="M18,12.671V4.5" transform="translate(-7.372)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    </g>
+  </symbol>
+</svg>

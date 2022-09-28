@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="17.582" height="17.582">
+  <symbol class="bi bi-vkuster-tick" id="vkuster-tick" stroke="currentColor" viewBox="0 0 17.582 17.582">
+    <g transform="translate(-2 -2)">
+      <g transform="translate(2.75 2.75)">
+        <path d="M6.44,9.69,8.5,11.753,12.63,7.627" transform="translate(-1.494 -1.649)" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" fill-rule="evenodd"/>
+        <path d="M.75,8.791c0,6.03,2.011,8.041,8.041,8.041s8.041-2.011,8.041-8.041S14.821.75,8.791.75.75,2.761.75,8.791Z" transform="translate(-0.75 -0.75)" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" fill-rule="evenodd"/>
+      </g>
+    </g>
+  </symbol>
+  <symbol class="bi bi-vkuster-tick" id="vkuster-tick2" stroke="currentColor" viewBox="0 0 17.905 13.014">
+      <path d="M19.662,9l-9.393,9.393L6,14.123" transform="translate(-3.879 -6.879)" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+  </symbol>
+</svg>

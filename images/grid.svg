@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+    <symbol class="bi bi-vkuster-grid" id="vkuster-grid" fill="currentColor" viewBox="0 0 18 18">
+        <g transform="translate(-361 -83)">
+            <circle cx="3.5" cy="3.5" r="3.5" transform="translate(361 83)" />
+            <circle cx="3.5" cy="3.5" r="3.5" transform="translate(372 83)" />
+            <circle cx="3.5" cy="3.5" r="3.5" transform="translate(372 94)" />
+            <circle cx="3.5" cy="3.5" r="3.5" transform="translate(361 94)" />
+        </g>
+    </symbol>
+</svg>

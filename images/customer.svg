@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+    <symbol class="bi bi-vkuster-customer" id="vkuster-customer" fill="currentColor" viewBox="0 0 13.799 16.898">
+        <g transform="translate(0 0)">
+            <path d="M6.9,11.858c-3.721,0-6.9.575-6.9,2.872s3.158,2.894,6.9,2.894c3.721,0,6.9-.575,6.9-2.872s-3.158-2.894-6.9-2.894" transform="translate(0 -0.726)" />
+            <path d="M7.052,8.942a4.5,4.5,0,0,0,4.565-4.471A4.5,4.5,0,0,0,7.052,0,4.5,4.5,0,0,0,2.486,4.471,4.5,4.5,0,0,0,7.052,8.942" transform="translate(-0.152 0)" />
+        </g>
+    </symbol>
+</svg>

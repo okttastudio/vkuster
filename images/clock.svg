@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol class="bi bi-vkuster-clock" id="vkuster-clock" fill="none" stroke="currentColor" viewBox="0 0 18.95 18.95">
+    <g transform="translate(0.8 0.8)">
+      <path d="M18.1,9.425A8.675,8.675,0,1,1,9.425.75,8.675,8.675,0,0,1,18.1,9.425Z" transform="translate(-0.75 -0.75)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" fill-rule="evenodd"/>
+      <path d="M13.909,10.461l-4.248-.069V5.846" transform="translate(-1.304 -1.067)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" fill-rule="evenodd"/>
+    </g>
+  </symbol>
+  <symbol class="bi bi-vksuter-clock" id="vkuster-clock2" viewBox="0 0 20 20">
+    <g transform="translate(0 -0.25)">
+      <circle cx="10" cy="10" r="10" transform="translate(0 0.25)" fill="#efefef"/>
+      <g transform="translate(3.25 3.5)">
+        <g transform="translate(2.75 2.75)">
+          <path d="M8.75,4.75a4,4,0,1,1-4-4A4,4,0,0,1,8.75,4.75Z" transform="translate(-0.75 -0.75)" fill="none" stroke="#91969f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" fill-rule="evenodd"/>
+          <path d="M11.62,7.974,9.661,7.942v-2.1" transform="translate(-5.807 -3.642)" fill="none" stroke="#91969f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" fill-rule="evenodd"/>
+        </g>
+      </g>
+    </g>
+  </symbol>
+</svg>

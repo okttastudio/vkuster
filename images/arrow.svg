@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+    <symbol class="bi bi-vkuster-arrow" id="arrow-right" fill="currentColor" viewBox="0 0 18 12">
+        <path id="Icon_ionic-ios-arrow-round-forward" d="M19.054,11.476a.8.8,0,0,0-.006,1.12l3.7,3.708H8.66a.792.792,0,0,0,0,1.583H22.744l-3.7,3.708a.8.8,0,0,0,.006,1.12.788.788,0,0,0,1.114-.006l5.017-5.054h0a.889.889,0,0,0,.164-.25.755.755,0,0,0,.061-.3.794.794,0,0,0-.225-.554l-5.017-5.054A.776.776,0,0,0,19.054,11.476Z" transform="translate(-7.875 -11.252)" />
+    </symbol>
+</svg>
