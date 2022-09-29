@@ -16601,9 +16601,6 @@ textarea.form-control-lg {
     min-height:1px;
     display:none
 }
-[dir=rtl] .slick-slide {
-    float:right
-}
 .slick-slide img {
     display:block
 }
@@ -16683,15 +16680,8 @@ textarea.form-control-lg {
         left: 0px;
     }
 }
-[dir=rtl] .slick-prev {
-    left:auto;
-    right:-25px
-}
 .slick-prev:before {
     content:"←"
-}
-[dir=rtl] .slick-prev:before {
-    content:"→"
 }
 .slick-next {
     right:-25px;
@@ -16701,15 +16691,8 @@ textarea.form-control-lg {
         right: 0px
     }
 }
-[dir=rtl] .slick-next {
-    left:-25px;
-    right:auto
-}
 .slick-next:before {
     content:"→"
-}
-[dir=rtl] .slick-next:before {
-    content:"←"
 }
 .slick-dotted.slick-slider {
     margin-bottom:30px
