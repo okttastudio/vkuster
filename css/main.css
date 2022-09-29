@@ -6464,7 +6464,7 @@ textarea.form-control-lg {
 }
 @media(min-width: 992px) {
     .modal-lg,.modal-xl {
-        max-width:800px
+        max-width: calc(100% - 50px)
     }
 }
 @media(min-width: 1200px) {
@@ -20440,13 +20440,14 @@ a .card.vkuster-vacancy:hover .card-title {
 }
 .vkuster-delivery-modal .modal-content {
     padding:0;
-    overflow:hidden
+    overflow:hidden;
+    max-height: calc(100vh - 50px);
 }
 @media(min-width: 992px) {
     .vkuster-delivery-modal .modal-content {
         height:625px;
         border:none;
-        border-radius:20px
+        border-radius:20px;
     }
 }
 .vkuster-delivery-modal .modal-sidebar {
@@ -20541,7 +20542,8 @@ a .card.vkuster-vacancy:hover .card-title {
     }
 }
 .vkuster-delivery-modal .modal-body .tab-content .tab-pane .mapping {
-    position:absolute
+    position:absolute;
+    object-fit: cover;
 }
 @media(max-width: 575.98px) {
     .vkuster-delivery-modal .modal-body .tab-content .tab-pane .mapping {
