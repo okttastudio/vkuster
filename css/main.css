@@ -20833,6 +20833,10 @@ a .card.vkuster-vacancy:hover .card-title {
     position: relative;
 }
 
+.search-res-space {
+    height: 20px;
+}
+
 .search-in:hover .search-res {
     opacity: 1;
     visibility: visible;
@@ -20840,18 +20844,41 @@ a .card.vkuster-vacancy:hover .card-title {
 
 .search-res {
     position: absolute;
-    font-size: 0.9rem;
-    color: #202020;
     width: inherit;
     opacity: 0;
     visibility: hidden;
-    transition: .3s ease-in-out;
     min-width: 400px;
+    transition: .3s ease-in-out;
+}
+
+.search-res-con {
+    font-size: 0.9rem;
+    color: #202020;
+    /*max-height: 320px;*/
+    max-height: calc(100vh - 240px);;
+    overflow-y: auto;
+    border-radius: 12px;
+    background: #FFF;
+    box-shadow: 0px 3px 15px #00000014;
+}
+
+.search-res-con::-webkit-scrollbar {
+    width: 12px;
+}
+
+.search-res-con::-webkit-scrollbar-track {
+    background: #f9f9f9;
+    border-radius: 20px;
+}
+
+.search-res-con::-webkit-scrollbar-thumb {
+    background-color: #ef4925;
+    border-radius: 12px;
+    border: 3px solid #f9f9f9;
 }
 
 .search-res ul {
-    background: #FFF;
-    box-shadow: 0px 3px 15px #00000014;
+
     border-radius: 20px;
     margin-top: 10px;
     padding: 15px;
