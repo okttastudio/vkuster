@@ -629,7 +629,6 @@ progress {
     padding-left:var(--bs-gutter-x, 0.75rem);
     margin-right:auto;
     margin-left:auto;
-    overflow-x: hidden;
 }
 @media(min-width: 576px) {
     .container-sm,.container {
@@ -4518,7 +4517,6 @@ textarea.form-control-lg {
     flex-wrap:inherit;
     align-items:center;
     justify-content:space-between;
-    overflow-x: inherit;
 }
 .navbar-brand {
     padding-top:.3125rem;
@@ -16678,7 +16676,12 @@ textarea.form-control-lg {
     -moz-osx-font-smoothing:grayscale
 }
 .slick-prev {
-    left:-25px
+    left:-25px;
+}
+@media (max-width: 1310px) {
+    .slick-prev {
+        left: 0px;
+    }
 }
 [dir=rtl] .slick-prev {
     left:auto;
@@ -16691,7 +16694,12 @@ textarea.form-control-lg {
     content:"→"
 }
 .slick-next {
-    right:-25px
+    right:-25px;
+}
+@media (max-width: 1310px) {
+    .slick-next {
+        right: 0px
+    }
 }
 [dir=rtl] .slick-next {
     left:-25px;
