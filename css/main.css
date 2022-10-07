@@ -17933,6 +17933,10 @@ input[type="range"]::-webkit-slider-thumb {
 .sidebar-catalog .nav-sidebar .nav-item .nav-link:hover,.offcanvas-catalog .nav-sidebar .nav-item .nav-link:hover {
     color:#ef4925
 }
+.sidebar-catalog-body > div {
+    column-count: 2;
+    width: 100%;
+}
 .sidebar-catalog-body h5,.sidebar-catalog-body .h5 {
     font-weight:bold;
     font-size:22px;
@@ -21277,13 +21281,14 @@ input[type="range"]::-ms-fill-upper {
 }
 
 .menu-left-cont {
-    /*display: none;*/
-    opacity: 0;
-    visibility: hidden;
+    display: none;
+    /*opacity: 0;*/
+    /*visibility: hidden;*/
     top: 0;
     background: #ffffff;
     max-width: calc(100% - 16px);
     transition: .5s ease-out;
+    width: 100%;
 }
 
 .menu-left-cont:hover {
