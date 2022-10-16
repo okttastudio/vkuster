@@ -1530,21 +1530,26 @@ var swiper = new Swiper('.swiper-container', {
 
 $('#menu-left-1').hover(
     function(){
-        $('#menu-right-1').css('opacity','1');
-        $('#menu-right-1').css('visibility','visible');
+        $('#menu-right-1').css('display','block');
     },
     function(){
-        $('#menu-right-1').css('opacity','0');
-        $('#menu-right-1').css('visibility','hidden');
-    }
+        $('#menu-right-1').css('display','none');
+    },
 );
 $('#menu-left-2').hover(
     function(){
-        $('#menu-right-2').css('opacity','1');
-        $('#menu-right-2').css('visibility','visible');
+        $('#menu-right-2').css('display','block');
     },
     function(){
-        $('#menu-right-2').css('opacity','0');
-        $('#menu-right-2').css('visibility','hidden');
-    }
+        $('#menu-right-2').css('display','none');
+    },
 );
+
+var bw = jQuery( window ).width();
+if(bw > 0){
+
+    window.scroll({
+        top: 1,
+        behavior: 'smooth'
+    });
+}
